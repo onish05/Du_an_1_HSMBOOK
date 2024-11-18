@@ -1,0 +1,40 @@
+.boxcenter {
+  width: 70%;
+  margin: 0 auto;
+}
+.row {
+  float: left;
+  width: 100%;
+}
+.mr {
+  margin: 2%;
+}
+.demo {
+  background-color: blueviolet;
+  min-height: 100px;
+}
+.header {
+  background-color: aquamarine;
+  color: azure;
+  font-size: 1vw;
+  padding: 10px;
+  border-radius: 10px;
+}
+.header h1 {
+  margin: 10 20;
+}
+.menu {
+  background-color: pink;
+  color: black;
+  font-size: 1vw;
+  padding: 10px;
+  border-radius: 10px;
+}
+.boxphai {
+  float: left;
+  width: 24%;
+}
+.boxtrai {
+  float: left;
+  width: 74%;
+}
