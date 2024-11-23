@@ -1,34 +1,44 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
 .boxcenter {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 .row {
   float: left;
   width: 100%;
 }
+.mb {
+  margin-bottom: 20px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
 .mr {
-  margin: 2%;
+  margin-right: 2%;
 }
 .demo {
-  background-color: blueviolet;
+  background-color: #edeae5;
   min-height: 100px;
 }
 .header {
-  background-color: aquamarine;
-  color: azure;
+  background-color: #026670;
   font-size: 1vw;
-  padding: 10px;
-  border-radius: 10px;
+  color: white;
+  color: white;
+  border-radius: 5px;
 }
 .header h1 {
-  margin: 10 20;
+  margin: 20px;
+  font-size: 1.4vw;
 }
 .menu {
-  background-color: pink;
-  color: black;
-  font-size: 1vw;
-  padding: 10px;
-  border-radius: 10px;
+  background-color: #9fedd7;
+  color: white;
+  border-radius: 5px;
 }
 .boxphai {
   float: left;
@@ -37,4 +47,97 @@
 .boxtrai {
   float: left;
   width: 74%;
+}
+.footer {
+  background-color: #026670;
+  font-size: 0.8vw;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px;
+}
+.boxtitle {
+  background-color: #fce181;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #edeae5;
+  color: #000000;
+  padding: 10px;
+}
+.boxcontent {
+  border-left: 1px solid #edeae5;
+  border-right: 1px solid #edeae5;
+  border-bottom: 1px solid #edeae5;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 200px;
+  padding: 10px;
+}
+.boxcontent2 {
+  border-left: 1px solid #edeae5;
+  border-right: 1px solid #edeae5;
+  border-bottom: 1px solid #edeae5;
+  min-height: 200px;
+}
+.boxfooter {
+  background-color: #fce181;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid #edeae5;
+  border-right: 1px solid #edeae5;
+  border-bottom: 1px solid #edeae5;
+  border: 1px solid #edeae5;
+  padding: 10px;
+}
+.banner {
+  min-height: 500px;
+  width: 100%;
+  text-align: center;
+}
+.banner img {
+  height: 450px;
+}
+.boxsp {
+  float: left;
+  width: 32%;
+  min-height: 300px;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  margin: 5px;
+}
+.boxsp .img {
+  min-height: 220px;
+  text-align: center;
+}
+.boxsp p {
+  font-size: 1.3vw;
+  font-weight: bold;
+}
+.boxsp a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9vw;
+}
+.boxsp p {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+}
+.boxsp a {
+  margin-bottom: 5px;
+}
+.ten {
+  margin-bottom: 5px;
+  padding: 1px 5px;
+}
+.img img {
+  width: 100%;
+  border-radius: 5px;
+}
+.menu ul {
+  padding: 0 10px;
+}
+.menu ul li {
+  list-style-type: none;
+  display: inline;
+  padding: 0 15px;
 }
