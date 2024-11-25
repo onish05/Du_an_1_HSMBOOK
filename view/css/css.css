@@ -141,3 +141,80 @@
   display: inline;
   padding: 0 15px;
 }
+.menu ul li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5;
+}
+.menu ul li a:hover {
+  color: white;
+  font-size: 1.1vw;
+}
+.formtaikhoan {
+  line-height: 150%;
+}
+.formtaikhoan input[type="text"],
+.formtaikhoan input[type="password"],
+.formtaikhoan input[type="email"],
+.formtaikhoan input[type="tel"] {
+  width: 100%;
+  border: 1px #fce181 solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.formtaikhoan input[type="checkbox"] {
+  border-radius: 5px;
+}
+.formtaikhoan input[type="submit"],
+.formcontent input[type="submit"],
+.formcontent input[type="resest"],
+.formtaikhoan input[type="reset"],
+.formcontent input[type="button"] {
+  border-radius: 5px;
+  padding: 5px 8px;
+  background-color: #fff;
+  border: 1px solid #fce181;
+  font-size: medium;
+}
+.formtaikhoan li a {
+  color: #026670;
+  text-decoration: none;
+}
+.formtaikhoan li a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.menudoc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menudoc ul li {
+  padding: 10px 20px;
+  border-bottom: 1px #edeae5 solid;
+}
+.menudoc ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.menudoc ul li:hover {
+  color: white;
+  background-color: #fce181;
+}
+.searchbox input[type="submit"]:hover {
+  width: 24%;
+  float: right;
+  padding: 7px 8px;
+  background-color: #fce181;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: gray;
+}
+.top10 img {
+  width: 15%;
+  height: 35px;
+  float: left;
+  margin-right: 10px;
+}
