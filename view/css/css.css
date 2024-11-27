@@ -218,3 +218,7 @@
   float: left;
   margin-right: 10px;
 }
+.top10 a {
+  color: #000;
+  text-decoration: none;
+}
