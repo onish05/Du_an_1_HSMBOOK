@@ -1,34 +1,44 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
 .boxcenter {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 .row {
   float: left;
   width: 100%;
 }
+.mb {
+  margin-bottom: 20px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
 .mr {
-  margin: 2%;
+  margin-right: 2%;
 }
 .demo {
-  background-color: blueviolet;
+  background-color: #edeae5;
   min-height: 100px;
 }
 .header {
-  background-color: aquamarine;
-  color: azure;
+  background-color: #026670;
   font-size: 1vw;
-  padding: 10px;
-  border-radius: 10px;
+  color: white;
+  color: white;
+  border-radius: 5px;
 }
 .header h1 {
-  margin: 10 20;
+  margin: 20px;
+  font-size: 1.4vw;
 }
 .menu {
-  background-color: pink;
-  color: black;
-  font-size: 1vw;
-  padding: 10px;
-  border-radius: 10px;
+  background-color: #9fedd7;
+  color: white;
+  border-radius: 5px;
 }
 .boxphai {
   float: left;
@@ -37,4 +47,323 @@
 .boxtrai {
   float: left;
   width: 74%;
+}
+.footer {
+  background-color: #026670;
+  font-size: 0.8vw;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px;
+}
+.boxtitle {
+  background-color: #fce181;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #edeae5;
+  color: #000000;
+  padding: 10px;
+}
+.boxcontent {
+  border-left: 1px solid #edeae5;
+  border-right: 1px solid #edeae5;
+  border-bottom: 1px solid #edeae5;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 200px;
+  padding: 10px;
+}
+.boxcontent2 {
+  border-left: 1px solid #edeae5;
+  border-right: 1px solid #edeae5;
+  border-bottom: 1px solid #edeae5;
+  min-height: 200px;
+}
+.boxfooter {
+  background-color: #fce181;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid #edeae5;
+  border-right: 1px solid #edeae5;
+  border-bottom: 1px solid #edeae5;
+  border: 1px solid #edeae5;
+  padding: 10px;
+}
+.banner {
+  min-height: 500px;
+  width: 100%;
+  text-align: center;
+}
+.banner img {
+  height: 450px;
+}
+.boxsp {
+  float: left;
+  width: 32%;
+  min-height: 300px;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  margin: 5px;
+}
+.boxsp .img {
+  min-height: 220px;
+  text-align: center;
+}
+.boxsp p {
+  font-size: 1.3vw;
+  font-weight: bold;
+}
+.boxsp a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9vw;
+}
+.boxsp p {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+}
+.boxsp a {
+  margin-bottom: 5px;
+}
+.ten {
+  margin-bottom: 5px;
+  padding: 1px 5px;
+}
+.img img {
+  width: 100%;
+  border-radius: 5px;
+}
+.menu ul {
+  padding: 0 10px;
+}
+.menu ul li {
+  list-style-type: none;
+  display: inline;
+  padding: 0 15px;
+}
+.menu ul li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5;
+}
+.menu ul li a:hover {
+  color: white;
+  font-size: 1.1vw;
+}
+.formtaikhoan {
+  line-height: 150%;
+}
+.formtaikhoan input[type="text"],
+.formtaikhoan input[type="password"],
+.formtaikhoan input[type="email"],
+.formtaikhoan input[type="tel"] {
+  width: 100%;
+  border: 1px #fce181 solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.formtaikhoan input[type="checkbox"] {
+  border-radius: 5px;
+}
+.formtaikhoan input[type="submit"],
+.formcontent input[type="submit"],
+.formcontent input[type="resest"],
+.formtaikhoan input[type="reset"],
+.formcontent input[type="button"] {
+  border-radius: 5px;
+  padding: 5px 8px;
+  background-color: #fff;
+  border: 1px solid #fce181;
+  font-size: medium;
+}
+.formtaikhoan li a {
+  color: #026670;
+  text-decoration: none;
+}
+.formtaikhoan li a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.menudoc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menudoc ul li {
+  padding: 10px 20px;
+  border-bottom: 1px #edeae5 solid;
+}
+.menudoc ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.menudoc ul li:hover {
+  color: white;
+  background-color: #fce181;
+}
+.searchbox input[type="submit"]:hover {
+  width: 24%;
+  float: right;
+  padding: 7px 8px;
+  background-color: #fce181;
+  border-radius: 5px;
+  border: 1px solid gray;
+  color: gray;
+}
+.top10 img {
+  width: 15%;
+  height: 35px;
+  float: left;
+  margin-right: 10px;
+}
+.top10 a {
+  color: #000;
+  text-decoration: none;
+}
+.top10 a:hover {
+  color: #026670;
+  text-decoration: underline;
+}
+.headeradmin {
+  background-color: #026670;
+  color: white;
+  padding: 0 35px;
+  border-radius: 5px;
+}
+.headeradmin h1 {
+  font-size: 2vw;
+}
+.formtitle {
+  background-color: #026670;
+  color: white;
+  padding: 0 35px;
+  border-radius: 5px;
+}
+.formcontent {
+  padding: 20px 0;
+}
+.formdslh table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.formdslh table th {
+  padding: 10px;
+  background-color: #fce181;
+}
+.formdslh table td {
+  padding: 15px 5px;
+  border: 1px solid #edeae5;
+}
+.formbs table {
+  width: 100%;
+  text-align: center;
+}
+.formbs table th {
+  padding: 10px;
+  background-color: #fce181;
+}
+.formbs table th:nth-child(2) {
+  padding: 10px;
+  width: 25%;
+  background-color: #fce181;
+}
+.formbs table th:nth-child(3) {
+  padding: 10px;
+  width: 25%;
+  background-color: #fce181;
+}
+.formbs table td {
+  padding: 15px 5px;
+  border: 1px solid #edeae5;
+}
+.formbsct table {
+  width: 100%;
+  text-align: center;
+}
+.formbsct table th {
+  padding: 10px;
+  background-color: #fce181;
+}
+.formbsct table th:nth-child(2) {
+  padding: 10px;
+  width: 15%;
+  background-color: #fce181;
+}
+.formbsct table th:nth-child(3) {
+  padding: 10px;
+  width: 15%;
+  background-color: #fce181;
+}
+.formbsct table th:nth-child(4) {
+  padding: 10px;
+  width: 15%;
+  background-color: #fce181;
+}
+.formbsct table td {
+  padding: 15px 5px;
+  border: 1px solid #edeae5;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+} /* Hide the images by default */
+.mySlides {
+  display: none;
+}
+.mySlides img {
+  width: 100%;
+  vertical-align: middle;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }

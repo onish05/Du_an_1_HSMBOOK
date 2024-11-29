@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include "../model/pdo.php";
 include "../model/danhmuc.php";
