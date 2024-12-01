@@ -367,3 +367,124 @@
   position: absolute;
   top: 0;
 }
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.spct {
+  text-align: center;
+}
+.spcl a {
+  color: #000;
+  text-decoration: none;
+}
+.spcl a:hover {
+  color: #026670;
+  text-decoration: underline;
+}
+.thongbao {
+  color: red;
+}
+.binhluan table {
+  width: 90%;
+  margin-left: 5%;
+}
+.binhluan table td:nth-child(1) {
+  width: 50%;
+}
+.binhluan table td:nth-child(2) {
+  width: 20%;
+}
+.binhluan table td:nth-child(3) {
+  width: 30%;
+}
+.binhluanform input[type="text"] {
+  width: 79%;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #edeae5;
+}
+.binhluanform input[type="submit"] {
+  width: 20%;
+  float: right;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #edeae5;
+}
+.binhluanform input[type="submit"]:hover {
+  width: 20%;
+  float: right;
+  padding: 4px 5px;
+  color: #fff;
+  background-color: #fce181;
+  border-radius: 5px;
+  border: 3px solid #fff;
+}
+.formtimkiem input[type="text"] {
+  width: 70%;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.formtimkiem input[type="submit"] {
+  width: 14%;
+  float: right;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.formtimkiem input[type="submit"]:hover {
+  width: 14%;
+  float: right;
+  padding: 4px 5px;
+  color: #fff;
+  background-color: gray;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.formtimkiem select {
+  width: 15%;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.chondm select {
+  width: 10%;
+  padding: 5px 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.listdm a {
+  text-decoration: none;
+  color: #000;
+}
