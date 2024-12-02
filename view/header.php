@@ -15,11 +15,10 @@
       </div>
       <div class="row mb menu">
          <ul>
-            <li><a href="index.php">Trang chủ"></a></li>
-            <li><a href="index.php">Trang chủ"></a></li>
-            <li><a href="index.php">Trang chủ"></a></li>
-            <li><a href="index.php">Trang chủ"></a></li>
-            <li><a href="index.php">Trang chủ"></a></li>
-
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="index.php">Trang chủ</a></li>
          </ul>
       </div>
