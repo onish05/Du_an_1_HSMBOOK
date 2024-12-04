@@ -7,7 +7,7 @@
          <div class="row mb10">
             Danh mục<br />
             <div class="chondm">
-               <selec name="iddm">
+               <select name="iddm">
                   <option value="0">Tất cả</option>
                   <?php
                   foreach ($listdanhmuc as $danhmuc) {
@@ -15,16 +15,20 @@
                      echo '<option value="' . $id . '">' . $name . '</option>';
                   }
                   ?>
-               </selec>
+               </select>
             </div>
          </div>
          <div class="row mb10">
             Tên sản phẩm <br />
-            <input type="text" name="tensp" />
+            <input type="text" name="tensach" />
+         </div>
+         <div class="row mb10">
+            Tên tác giả <br />
+            <input type="text" name="tacgia" />
          </div>
          <div class="row mb10">
             Giá <br />
-            <input type="text" name="giasp" />
+            <input type="text" name="giasach" />
          </div>
          <div class="row mb10">
             Hình <br />
@@ -37,8 +41,7 @@
          <div class="row mb10">
             <input type="submit" name="themmoi" value="Thêm mới" />
             <input type="reset" value="Nhập lại" />
-            <a href="index.php?act=listsp"><input type="button" value="Danh sách" /></a>
-            <a href="index.php?act=listsp"><input type="button" value="Danh sách" /></a>
+            <a href="index.php?act=listsp"><input type="button" value="Danh sách" /></a>            
          </div>
          <?php
          if (isset($thongbao) && ($thongbao != "")) {
