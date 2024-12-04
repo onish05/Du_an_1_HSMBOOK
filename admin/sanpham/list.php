@@ -5,12 +5,12 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Danh sách sản phẩm</title>
-   <link rel="stylesheet" href="./css/css.css">
+   <link rel="stylesheet" href="/css/css.css">
 </head>
 
 <body>
-   <div class="row"">
-<div class=" row formtitle mb">
+   <div class="row">
+<div class=" row frmtitle mb">
       <h2>DANH SÁCH SẢN PHẨM</h2>
    </div>
    <div class="formtimkiem">
@@ -34,9 +34,10 @@
             <tr>
                <th></th>
                <th>Mã sản phẩm</th>
-               <th>Tên sản phẩm</th>
+               <th>Tên sách</th>
+               <th>Tên tác giả</th>
                <th>Hình sản phẩm</th>
-               <th>Giá sản phẩm</th>
+               <th>Giá</th>
                <th>Lượt xem</th>
                <th></th>
             </tr>
@@ -46,6 +47,8 @@
                $suasp = "index.php?act=suasp&id=" . $id;
                $xoasp = "index.php?act=xoasp&id=" . $id;
                $hinhpath = "../upload/" . $img;
+               $luotxem = 0;
+
                if (is_file($hinhpath)) {
                   $hinh = "<img src='" . $hinhpath . "' height='80'>";
                } else {
@@ -55,6 +58,7 @@
                <td><input type="checkbox" name="check" id="" /></td>
                <td>' . $id . '</td>
                <td>' . $name . '</td>
+               <td>' . $tacgia . '</td>
                <td>' . $hinh . '</td>
                <td>' . $price . '</td>
                <td>' . $luotxem . '</td>
