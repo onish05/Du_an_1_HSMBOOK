@@ -9,16 +9,24 @@
 </head>
 
 <body>
-   <div class="container">
+   <div class="boxcenter">
       <div class="row mb header">
          <h1>HSMBooks</h1>
       </div>
       <div class="row mb menu">
          <ul>
+<<<<<<< HEAD
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="index.php">Trang chủ</a></li>
             <li><a href="index.php">Trang chủ</a></li>
+=======
+            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="index.php?act=gioithieu">Giới thiệu</a></li>
+            <li><a href="index.php?act=bangsize">Bảng size</a></li>
+            <li><a href="index.php?act=gopy">Góp ý</a></li>
+            <li><a href="index.php?act=hoidap">Hỏi đáp</a></li>
+>>>>>>> 539dee2099b118513f12a0861b824e7c6c982b75
          </ul>
       </div>
