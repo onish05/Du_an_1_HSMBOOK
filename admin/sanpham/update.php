@@ -9,6 +9,7 @@ if (is_file($hinhpath)) {
    $hinh = "không có hình ảnh";
 }
 ?>
+
 <div class="row">
    <div class="row formtitle">
       <h2>CẬP NHẬT SẢN PHẨM</h2>
@@ -32,9 +33,13 @@ if (is_file($hinhpath)) {
                </select>
             </div>
          </div>
-         <div class="row mb10">
+         <div class="row mb10"> 
             Tên sản phẩm <br />
             <input type="text" name="tensp" value="<?= $sanpham['name'] ?>" />
+         </div>
+         <div class="row mb10">
+            Tên tác giả <br />
+            <input type="text" name="tacgia" value="<?= $sanpham['tacgia'] ?>" />
          </div>
          <div class="row mb10">
             Giá <br />
@@ -68,3 +73,7 @@ if (is_file($hinhpath)) {
             echo $thongbao;
          }
          ?>
+          </form>
+   </div>
+</div>
+</div>
