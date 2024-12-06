@@ -47,6 +47,7 @@
                $suasp = "index.php?act=suasp&id=" . $id;
                $xoasp = "index.php?act=xoasp&id=" . $id;
                $hinhpath = "../upload/" . $img;
+               $luotxem = 0;
 
                if (is_file($hinhpath)) {
                   $hinh = "<img src='" . $hinhpath . "' height='80'>";
