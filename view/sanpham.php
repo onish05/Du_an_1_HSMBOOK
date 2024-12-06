@@ -1,5 +1,5 @@
 <div class="row mb">
-    <div class="boxtrai mr">
+  <div class="boxtrai mr">
         <div class="row mb">
             <div class="boxtitle">Sản phẩm: <strong><? $tendm ?></strong></div>\
             <div class="row boxcontent">
@@ -17,7 +17,7 @@
                         echo '<div class="boxsp ' . $mr . '">
                             <div class="row img">
                             <a href="' .$linksp . '"> 
-                            <img src = "' .$hinh . '" width="300px" alt="" />\
+                            <img src = "' .$hinh . '" width="300px" alt="" />
                             </a>
                             </div>
                             <p> '.$price . '</p>

@@ -3,6 +3,7 @@
       <div class="row">
          <div class="banner">
             <div class="slideshow-container">
+
                <div class="mySlides fade">
                   <img src="view/img/slide/AnhDoLego_PC.png" alt="" style="width:100%">
                </div>
@@ -13,10 +14,36 @@
                   <img src="view/img/slide/AnhDoLego_PC.png" alt="" style="width:100%">
                </div>
             </div>
+            <br>
          </div>
       </div>
       <div class="row">
-         <?php ?>
+         <?php 
+            $i = 0;
+            foreach ($sachnew as $sp) {
+               extract($sp);
+               $hinh = $img_path . $img;
+               $linksp = "index.php?act=sanphamct&idsp=" .$id;
+               if (($i == 2) || ($i == 5) || ($i == 8 ))  {
+                  $mr = "";
+               } else {
+                  $mr = "mr";
+               }
+               echo '<div class="boxsp ' . $mr . '">
+               <div class="row img">
+               <a href="' . $linksp . '">
+                  <img src="' . $hinh . '" width="300px" alt="" />
+               </a>
+            </div>
+            <p>' . $price . '.000đ</p>
+            <a href="' . $linksp . '"><div class="ten">' . $name . '</div></a>
+         </div>';
+            $i += 1;
+            }
+         ?>
       </div>
+   </div>
+   <div class="boxphai">
+      <?php include "boxright.php";?>
    </div>
 </div>
