@@ -17,7 +17,7 @@
                         echo '<div class="boxsp ' . $mr . '">
                             <div class="row img">
                             <a href="' .$linksp . '"> 
-                            <img src = "' .$hinh . '" width="300px" alt="" />\
+                            <img src = "' .$hinh . '" width="300px" alt="" />
                             </a>
                             </div>
                             <p> '.$price . '</p>
