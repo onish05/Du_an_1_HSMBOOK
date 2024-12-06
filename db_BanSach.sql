@@ -120,10 +120,50 @@ CREATE TABLE `sanpham` (
 -- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
-INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luot_xem`, `iddm`) VALUES
-(3, 'Tư duy nhanh và chậm', 'Daniel Kahneman', 35, '3.webp', 'Sách tâm lý học nổi tiếng giúp thay đổi tư duy', 0, 18),
-(13, 'Lén Nhặt Chuyện Đời', 'Mộc Trầm', 43, '1.webp', 'Lén Nhặt Chuyện Đời.\r\n\r\nTại vùng ngoại ô xứ Đan Mạch xưa, người thợ kim hoàn Per Enevoldsen đã cho ra mắt một món đồ trang sức lấy ý tưởng từ Pandora - người phụ nữ đầu tiên của nhân loại mang vẻ đẹp như một ngọc nữ phù dung, kiêu sa và bí ẩn trong Thần thoại Hy Lạp. Vòng Pandora được kết hợp từ một sợi dây bằng vàng, bạc hoặc bằng da cùng với những viên charm được chế tác đa dạng, tỉ mỉ. Ý tưởng của ông, mỗi viên charm như một câu chuyện, một kỷ niệm đáng nhớ của người sở hữu chiếc vòng. Khi một viên charm được thêm vào sợi Pandora là cuộc đời lại có thêm một ký ức cần lưu lại để nhớ, để thương, để trân trọng. Lén nhặt chuyện đời ra mắt trong khoảng thời gian chông chênh nhất của bản thân, hay nói cách khác là một cậu bé mới lớn, vừa bước ra khỏi cái vỏ bọc vốn an toàn của mình. Những câu chuyện trong Lén nhặt chuyện đời là những câu chuyện tôi được nghe kể lại, hoặc vô tình bắt gặp, hoặc nhặt nhạnh ở đâu đó trong miền ký ức rời rạc của quá khứ, không theo một trình tự hay một thời gian nào nhất định.', 0, 22),
-(16, 'Nhà Giả Kim', 'Paulo Coelho', 56, '2.webp', 'Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người. \r\n\r\nTiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc.', 0, 22);
+-- Danh mục 1: Tiểu thuyết
+INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luot_xem`, `iddm`) 
+VALUES 
+(1, 'Người tình Sputnik', 'Haruki Murakami', 150000, 'nguoi_tinh_sputnik.jpg', 'Một câu chuyện tình kỳ lạ với phong cách viết huyền ảo, đầy cảm xúc.', 0, 1),
+(2, 'Đồi gió hú', 'Emily Brontë', 200000, 'doi_gio_hu.jpg', 'Tác phẩm kinh điển xoay quanh tình yêu và sự thù hận.', 0, 1),
+(3, '1984', 'George Orwell', 180000, '1984.jpg', 'Một xã hội bị giám sát toàn diện trong bối cảnh tương lai.', 0, 1),
+(4, 'Cánh đồng bất tận', 'Nguyễn Ngọc Tư', 100000, 'canh_dong_bat_tan.jpg', 'Cuộc sống miền Tây Nam Bộ với nhiều góc nhìn nhân văn.', 0, 1),
+(5, 'Bến không chồng', 'Dương Hướng', 120000, 'ben_khong_chong.jpg', 'Cuộc sống ở nông thôn Việt Nam thời hậu chiến.', 0, 1);
+
+-- Danh mục 2: Khoa học - Công nghệ
+INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luot_xem`, `iddm`) 
+VALUES 
+(6, 'Lược sử thời gian', 'Stephen Hawking', 250000, 'luoc_su_thoi_gian.jpg', 'Tìm hiểu vũ trụ từ vụ nổ lớn đến hố đen.', 0, 2),
+(7, 'Công nghệ tương lai', 'Michio Kaku', 230000, 'cong_nghe_tuong_lai.jpg', 'Những đột phá về công nghệ trong thế kỷ 21.', 0, 2),
+(8, 'Trí tuệ nhân tạo: Kỷ nguyên mới', 'Max Tegmark', 220000, 'tri_tue_nhan_tao.jpg', 'AI và tác động của nó đến xã hội và công việc.', 0, 2),
+(9, 'Blockchain và Bitcoin', 'Andreas M. Antonopoulos', 300000, 'blockchain_bitcoin.jpg', 'Công nghệ blockchain và ứng dụng của nó trong kinh tế.', 0, 2),
+(10, 'Vật lý lượng tử cho mọi người', 'Christophe Galfard', 180000, 'vat_ly_luong_tu.jpg', 'Khám phá vật lý lượng tử một cách đơn giản.', 0, 2);
+
+-- Danh mục 3: Kinh doanh - Quản trị
+INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luot_xem`, `iddm`) 
+VALUES 
+(11, 'Nghệ thuật quản trị', 'Peter Drucker', 300000, 'nghe_thuat_quan_tri.jpg', 'Các nguyên tắc quản trị hiệu quả trong tổ chức.', 0, 3),
+(12, 'Tư duy nhanh và chậm', 'Daniel Kahneman', 280000, 'tu_duy_nhanh_va_cham.jpg', 'Cách con người đưa ra quyết định trong kinh doanh và cuộc sống.', 0, 3),
+(13, 'Dẫn đầu sự thay đổi', 'John P. Kotter', 240000, 'dan_dau_thay_doi.jpg', 'Làm thế nào để thành công khi tổ chức phải thay đổi.', 0, 3),
+(14, 'Startup tinh gọn', 'Eric Ries', 200000, 'startup_tinh_gon.jpg', 'Phát triển doanh nghiệp khởi nghiệp với quy trình hiệu quả.', 0, 3),
+(15, 'Đừng bao giờ đi ăn một mình', 'Keith Ferrazzi', 260000, 'dung_di_an_mot_minh.jpg', 'Xây dựng mối quan hệ để thành công trong công việc và cuộc sống.', 0, 3);
+
+-- Danh mục 4: Sách kỹ năng sống
+INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luot_xem`, `iddm`) 
+VALUES 
+(16, 'Đắc nhân tâm', 'Dale Carnegie', 150000, 'dac_nhan_tam.jpg', 'Cách giao tiếp và ứng xử hiệu quả.', 0, 4),
+(17, '7 thói quen của người thành đạt', 'Stephen R. Covey', 250000, '7_thoi_quen_thanh_dat.jpg', 'Bí quyết để đạt được thành công lâu dài.', 0, 4),
+(18, 'Quẳng gánh lo đi và vui sống', 'Dale Carnegie', 200000, 'quang_ganh_lo_di.jpg', 'Bí quyết sống lạc quan, vui vẻ.', 0, 4),
+(19, 'Nghệ thuật sống tự tin', 'Mark Manson', 180000, 'nghe_thuat_song_tu_tin.jpg', 'Làm thế nào để vượt qua sợ hãi và tự tin hơn.', 0, 4),
+(20, 'Hạnh phúc là một lựa chọn', 'Tal Ben-Shahar', 220000, 'hanh_phuc_lua_chon.jpg', 'Bí quyết để sống hạnh phúc.', 0, 4);
+
+-- Danh mục 5: Truyện thiếu nhi
+INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luot_xem`, `iddm`) 
+VALUES 
+(21, 'Dế mèn phiêu lưu ký', 'Tô Hoài', 90000, 'de_men_phieu_luu.jpg', 'Câu chuyện về chuyến phiêu lưu của chú dế mèn.', 0, 5),
+(22, 'Harry Potter và hòn đá phù thủy', 'J.K. Rowling', 350000, 'harry_potter.jpg', 'Hành trình trở thành pháp sư của cậu bé Harry Potter.', 0, 5),
+(23, 'Cuộc phiêu lưu của Pinocchio', 'Carlo Collodi', 150000, 'pinocchio.jpg', 'Hành trình tìm lại bản thân của chú bé gỗ Pinocchio.', 0, 5),
+(24, 'Nhóc Nicolas', 'René Goscinny', 120000, 'nhoc_nicolas.jpg', 'Những câu chuyện vui nhộn của cậu bé Nicolas.', 0, 5),
+(25, 'Alice ở xứ sở thần tiên', 'Lewis Carroll', 250000, 'alice_xu_so_than_tien.jpg', 'Câu chuyện kỳ ảo về cuộc phiêu lưu của cô bé Alice.', 0, 5);
 
 -- --------------------------------------------------------
 
