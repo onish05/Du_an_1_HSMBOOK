@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 01, 2024 at 08:07 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th12 06, 2024 lúc 04:32 AM
+-- Phiên bản máy phục vụ: 8.0.30
+-- Phiên bản PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,27 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_bansach`
+-- Cơ sở dữ liệu: `db_bansach`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `binhluan`
+-- Cấu trúc bảng cho bảng `binhluan`
 --
 
 CREATE TABLE `binhluan` (
   `id` int NOT NULL,
-  `id_sach` int NOT NULL,
-  `id_taikhoan` int NOT NULL,
-  `noi_dung` text COLLATE utf8mb4_general_ci NOT NULL,
-  `ngay_binh_luan` datetime DEFAULT CURRENT_TIMESTAMP
+  `idpro` int NOT NULL,
+  `iduser` int NOT NULL,
+  `noidung` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `ngaybinhluan` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietdonhang`
+-- Cấu trúc bảng cho bảng `chitietdonhang`
 --
 
 CREATE TABLE `chitietdonhang` (
@@ -52,7 +52,7 @@ CREATE TABLE `chitietdonhang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `danhmuc`
+-- Cấu trúc bảng cho bảng `danhmuc`
 --
 
 CREATE TABLE `danhmuc` (
@@ -61,7 +61,7 @@ CREATE TABLE `danhmuc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `danhmuc`
+-- Đang đổ dữ liệu cho bảng `danhmuc`
 --
 
 INSERT INTO `danhmuc` (`id`, `name`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `danhmuc` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donhang`
+-- Cấu trúc bảng cho bảng `donhang`
 --
 
 CREATE TABLE `donhang` (
@@ -89,7 +89,7 @@ CREATE TABLE `donhang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `giohang`
+-- Cấu trúc bảng cho bảng `giohang`
 --
 
 CREATE TABLE `giohang` (
@@ -102,7 +102,7 @@ CREATE TABLE `giohang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -117,46 +117,52 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `sanpham`
+-- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
 INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luot_xem`, `iddm`) VALUES
-(1, 'Lập trình PHP', 'Nguyễn Văn A', 200000, 'php.jpg', 'Sách hướng dẫn lập trình PHP từ cơ bản đến nâng cao', 0, 4),
-(2, 'Harry Potter', 'J.K. Rowling', 300000, 'harry.jpg', 'Bộ truyện nổi tiếng về cậu bé phù thủy Harry Potter', 0, 6),
-(3, 'Tư duy nhanh và chậm', 'Daniel Kahneman', 350000, 'tuduy.jpg', 'Sách tâm lý học nổi tiếng giúp thay đổi tư duy', 0, 7),
-(10, 'dqwe', 'huy', 123, '', '123fw ưews', 0, 0),
-(11, 'ăef', 'huy', 123, '', '', 0, 0);
+(3, 'Tư duy nhanh và chậm', 'Daniel Kahneman', 35, '3.webp', 'Sách tâm lý học nổi tiếng giúp thay đổi tư duy', 0, 18),
+(13, 'Lén Nhặt Chuyện Đời', 'Mộc Trầm', 43, '1.webp', 'Lén Nhặt Chuyện Đời.\r\n\r\nTại vùng ngoại ô xứ Đan Mạch xưa, người thợ kim hoàn Per Enevoldsen đã cho ra mắt một món đồ trang sức lấy ý tưởng từ Pandora - người phụ nữ đầu tiên của nhân loại mang vẻ đẹp như một ngọc nữ phù dung, kiêu sa và bí ẩn trong Thần thoại Hy Lạp. Vòng Pandora được kết hợp từ một sợi dây bằng vàng, bạc hoặc bằng da cùng với những viên charm được chế tác đa dạng, tỉ mỉ. Ý tưởng của ông, mỗi viên charm như một câu chuyện, một kỷ niệm đáng nhớ của người sở hữu chiếc vòng. Khi một viên charm được thêm vào sợi Pandora là cuộc đời lại có thêm một ký ức cần lưu lại để nhớ, để thương, để trân trọng. Lén nhặt chuyện đời ra mắt trong khoảng thời gian chông chênh nhất của bản thân, hay nói cách khác là một cậu bé mới lớn, vừa bước ra khỏi cái vỏ bọc vốn an toàn của mình. Những câu chuyện trong Lén nhặt chuyện đời là những câu chuyện tôi được nghe kể lại, hoặc vô tình bắt gặp, hoặc nhặt nhạnh ở đâu đó trong miền ký ức rời rạc của quá khứ, không theo một trình tự hay một thời gian nào nhất định.', 0, 22),
+(16, 'Nhà Giả Kim', 'Paulo Coelho', 56, '2.webp', 'Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người. \r\n\r\nTiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc.', 0, 22);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taikhoan`
+-- Cấu trúc bảng cho bảng `taikhoan`
 --
 
 CREATE TABLE `taikhoan` (
   `id` int NOT NULL,
-  `ten_dang_nhap` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `mat_khau` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pass` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `dia_chi` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `so_dien_thoai` varchar(15) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `vai_tro` tinyint DEFAULT '0' COMMENT '0: Khách hàng, 1: Admin'
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `tel` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `role` tinyint DEFAULT '0' COMMENT '0: Khách hàng, 1: Admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Đang đổ dữ liệu cho bảng `taikhoan`
+--
+
+INSERT INTO `taikhoan` (`id`, `user`, `pass`, `email`, `address`, `tel`, `role`) VALUES
+(1, 'DFWE', 'D112', 'vanhuynguyen2802@gmail.com', NULL, NULL, 0),
+(2, 'admin', '123', 'vanhuynguyen2802@gmail.com', NULL, NULL, 0);
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `binhluan`
+-- Chỉ mục cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_sach` (`id_sach`),
-  ADD KEY `id_taikhoan` (`id_taikhoan`);
+  ADD KEY `id_sach` (`idpro`),
+  ADD KEY `id_taikhoan` (`iduser`);
 
 --
--- Indexes for table `chitietdonhang`
+-- Chỉ mục cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
   ADD PRIMARY KEY (`id`),
@@ -164,20 +170,20 @@ ALTER TABLE `chitietdonhang`
   ADD KEY `id_sach` (`id_sach`);
 
 --
--- Indexes for table `danhmuc`
+-- Chỉ mục cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `donhang`
+-- Chỉ mục cho bảng `donhang`
 --
 ALTER TABLE `donhang`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_taikhoan` (`id_taikhoan`);
 
 --
--- Indexes for table `giohang`
+-- Chỉ mục cho bảng `giohang`
 --
 ALTER TABLE `giohang`
   ADD PRIMARY KEY (`id`),
@@ -185,90 +191,90 @@ ALTER TABLE `giohang`
   ADD KEY `id_sach` (`id_sach`);
 
 --
--- Indexes for table `sanpham`
+-- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_theloai` (`iddm`);
 
 --
--- Indexes for table `taikhoan`
+-- Chỉ mục cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `binhluan`
+-- AUTO_INCREMENT cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `chitietdonhang`
+-- AUTO_INCREMENT cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `danhmuc`
+-- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `donhang`
+-- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `giohang`
+-- AUTO_INCREMENT cho bảng `giohang`
 --
 ALTER TABLE `giohang`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `sanpham`
+-- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `taikhoan`
+-- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `binhluan`
+-- Các ràng buộc cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
-  ADD CONSTRAINT `binhluan_ibfk_1` FOREIGN KEY (`id_sach`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `binhluan_ibfk_2` FOREIGN KEY (`id_taikhoan`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `binhluan_ibfk_1` FOREIGN KEY (`idpro`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `binhluan_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `chitietdonhang`
+-- Các ràng buộc cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
   ADD CONSTRAINT `chitietdonhang_ibfk_1` FOREIGN KEY (`id_donhang`) REFERENCES `donhang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `chitietdonhang_ibfk_2` FOREIGN KEY (`id_sach`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `donhang`
+-- Các ràng buộc cho bảng `donhang`
 --
 ALTER TABLE `donhang`
   ADD CONSTRAINT `donhang_ibfk_1` FOREIGN KEY (`id_taikhoan`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `giohang`
+-- Các ràng buộc cho bảng `giohang`
 --
 ALTER TABLE `giohang`
   ADD CONSTRAINT `giohang_ibfk_1` FOREIGN KEY (`id_taikhoan`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
