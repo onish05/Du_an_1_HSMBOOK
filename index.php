@@ -11,6 +11,7 @@ include "global.php";
 
 $sachnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
+$dstop10 = loadall_sanpham_top10();
 
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -27,21 +28,30 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             } else {
                 $iddm = 0;
             }
-            $dssp = loadall_sanpham($kyw . $iddm);
+            $dssp = loadall_sanpham($kyw, $iddm);
             $tendm = loadone_ten_dm($iddm);
             include "view/sanpham.php";
             break;
         case 'sanphamct':
             if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                 $id = $_GET['idsp'];
-                $onesp = loadall_sanpham($id);
+
+                // Tăng lượt xem
+                tang_luotxem($id);
+
+                // Lấy thông tin sản phẩm
+                $onesp = loadone_sanpham($id);
                 extract($onesp);
+
+                // Sản phẩm cùng loại
                 $sp_cungloai = loadone_sanpham_cungloai($id, $iddm);
+
                 include "view/sanphamct.php";
             } else {
                 include "view/home.php";
             }
             break;
+
             //Controller tài khoản
         case 'dangky':
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {

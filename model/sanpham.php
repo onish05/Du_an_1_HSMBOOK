@@ -67,3 +67,7 @@ function update_sanpham($id, $iddm, $tensach, $tacgia, $giasach, $mota, $hinh,)
    }
    pdo_execute($sql);
 }
+function tang_luotxem($id) {
+   $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE id = ?";
+   pdo_execute($sql, $id);
+}
