@@ -1,7 +1,7 @@
 <div class="row mb">
   <div class="boxtrai mr">
         <div class="row mb">
-            <div class="boxtitle">Sản phẩm <strong><? $tendm ?></strong></div>
+            <div class="boxtitle">Sản phẩm: <strong><? $tendm ?></strong></div>\
             <div class="row boxcontent">
                 <?php
                     $i = 0;
@@ -20,7 +20,7 @@
                             <img src = "' .$hinh . '" width="300px" alt="" />
                             </a>
                             </div>
-                            <p> '.$price . '.000đ</p>
+                            <p> '.$price . '</p>
                             <a href="' . $linksp . '"> <div class="ten">' . $name . '</div></a>    
                         </div>';
                         $i += 1;
