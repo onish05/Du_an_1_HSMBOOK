@@ -1,6 +1,12 @@
 <div class="row mb">
-    <div class="boxtrai mr">
-        <div class="row mb">
+
+   <div class="boxtrai mr">
+      <div class="row mb">
+         <?php
+         extract($onesp);
+         ?>
+         <div class="boxtitle"><?= $name ?></div>
+         <div class="row boxcontent">
             <?php
             extract($onesp);
             ?>
