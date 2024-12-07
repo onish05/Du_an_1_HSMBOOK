@@ -37,7 +37,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $id = $_GET['idsp'];
 
                 // Tăng lượt xem
-                tang_luotxem($id);
+                $tang_luotxem($id);
 
                 // Lấy thông tin sản phẩm
                 $onesp = loadone_sanpham($id);

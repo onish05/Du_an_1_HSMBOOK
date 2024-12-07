@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="row">
-            <iframe src="view/binhluan/formbinhluan.php?idpro=<?= $id?>" frameborder="0" width="100%" height="300px"></iframe>
+            <iframe src="view/binhluan/formbinhluan.php?idpro=<?= $id ?>" frameborder="0" width="100%" height="300px"></iframe>
         </div>
         <div class="row mb">
             <div class="boxtitle">Sản phẩm cùng loại</div>
@@ -24,7 +24,7 @@
                 <?php
                 foreach ($sp_cungloai as $sp_cungloaii) {
                     extract($sp_cungloaii);
-                    $linksp = "index.php?act=sanphamct&idsp" . $id;
+                    $linksp = "index.php?act=sanpphamct&idsp" . $id;
                     echo '<li class="row mb10 spcl"><a href="' . $linksp . '">' . $name . '</a></li>';
                 }
                 ?>
