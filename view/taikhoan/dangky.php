@@ -4,8 +4,8 @@
       <div class="row boxcontent formtaikhoan">
          <form action="index.php?act=dangky" method="post">
             <div class="row mb10">
-               Tên đang nhập
-               <input type="text" name="username">
+               Tên đ nhập
+               <input type="text" name="user">
             </div>
             <div class="row mb10">
                Mật khẩu
@@ -16,21 +16,20 @@
                <input type="email" name="email">
             </div>
             <div class="row mb10">
-               Địa chỉ
-               <input type="text" name="address">
+               <input type="submit" name="dangky" value="Đăng ký">
+               <input type="reset" value="Nhập lại">
             </div>
-            <div class="row mb10">
-               Số điện thoại
-               <input type="tel" name="tel">
-            </div>
-         </form>
+            </form>
          <h2 class="thongbao">
-            <?php ?>
+            <?php 
+            if(isset($thongbao) && ($thongbao != "")) {
+               echo $thongbao;
+            }
+            ?>
          </h2>
       </div>
    </div>
-</div>
 <div class="boxphai">
-   <?php ?>
+   <?php include "view/boxright.php"; ?>
 </div>
 </div>
