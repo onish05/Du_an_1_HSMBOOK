@@ -106,7 +106,7 @@
   margin: 5px;
 }
 .boxsp .img {
-  min-height: 220px;
+  min-height: 120px;
   text-align: center;
 }
 .boxsp p {
@@ -124,6 +124,10 @@
 }
 .boxsp a {
   margin-bottom: 5px;
+}
+.btnaddtocart {
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 .ten {
   margin-bottom: 5px;
@@ -157,7 +161,8 @@
 .formtaikhoan input[type="text"],
 .formtaikhoan input[type="password"],
 .formtaikhoan input[type="email"],
-.formtaikhoan input[type="tel"] {
+.formtaikhoan input[type="tel"],
+.addtocart input[type="submit"] {
   width: 100%;
   border: 1px #797979 solid;
   padding: 5px 10px;
@@ -203,14 +208,29 @@
   color: white;
   background-color: #797979;
 }
+.searchbox input[type="text"] {
+  width: 75%;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #edeae5;
+}
+.searchbox input[type="submit"] {
+  width: 24%;
+  float: right;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #edeae5;
+}
 .searchbox input[type="submit"]:hover {
   width: 24%;
   float: right;
-  padding: 7px 8px;
+  padding: 5px 8px;
   background-color: #797979;
   border-radius: 5px;
   border: 1px solid gray;
-  color: gray;
+  color: white;
 }
 .top10 img {
   width: 15%;
@@ -247,6 +267,7 @@
 .formdslh table {
   width: 100%;
   text-align: center;
+  border-radius: 15px;
   border-collapse: collapse;
 }
 .formdslh table th {
@@ -487,4 +508,7 @@
 .listdm a {
   text-decoration: none;
   color: #000;
+}
+.cart {
+  width: 100%;
 }

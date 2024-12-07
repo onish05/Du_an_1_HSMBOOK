@@ -1,4 +1,4 @@
-<div class="row mb footer">HSMBook</div>
+<div class="row mb footer">HSMBooks</div>
 <script>
    let slideIndex = 0;
    showSlides();

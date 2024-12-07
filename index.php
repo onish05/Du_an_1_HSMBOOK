@@ -15,7 +15,7 @@ $dsdm = loadall_danhmuc();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-            //Controller sản phẩm
+        //Controller sản phẩm
         case 'sanpham':
             if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
                 $kyw = $_POST['kyw'];
@@ -42,7 +42,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
-            //Controller tài khoản
+        //Controller tài khoản
         case 'dangky':
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -98,9 +98,28 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php');
             break;
-            //controller   
+        //controller   
         case 'gioithieu':
             include "view/gioithieu.php";
+            break;
+        //Controller cart
+        case "addtocart":
+            include "view/cart/viewcart.php";
+            break;
+        case "delcart":
+            header("Location: index.php?act=viewcart");
+            break;
+        case "viewcart":
+            include "view/cart/viewcart.php";
+            break;
+        case "bill":
+            include "view/cart/bill.php";
+            break;
+        case "billconfirm":
+            include "view/cart/billconfirm.php";
+            break;
+        case "mybill":
+            include "view/cart/mybill.php";
             break;
         default:
             include "view/home.php";
