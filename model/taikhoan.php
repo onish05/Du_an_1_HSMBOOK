@@ -1,5 +1,4 @@
 <?php
-
 function loadall_taikhoan()
 {
     $sql = "SELECT * FROM taikhoan order by id desc";
@@ -30,6 +29,6 @@ function check_email($email)
 }
 function update_taikhoan($id, $user, $email, $pass, $address, $tel)
 {
-    $sql = "UPDATE taikhoan SET user = '" . $user . "', email = '" . $email . "' , pass = '" . $pass . "', address = '" . $address  . "', tel = '" . $tel . "' WHERE id = " . $id;
+    $sql = "UPDATE taikhoan SET user = '" .$user. "', email = '" .$email. "' , pass = '" .$pass. "', address = '" .$address. "', tel = '" .$tel. "' WHERE id = ".$id;
     pdo_execute($sql);
 }

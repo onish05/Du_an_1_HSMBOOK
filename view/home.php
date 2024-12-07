@@ -52,6 +52,13 @@
             </div>
             <p>' . $price . '.000đ</p>
             <a href="' . $linksp . '"><div class="ten">' . $name . '</div></a>
+            <form action="index.php?act=addtocart" method="post">
+               <input type="hidden" name="id" value="'.$id.'">
+               <input type="hidden" name="name" value="'.$name.'">
+               <input type="hidden" name="img" value="'.$img.'">
+               <input type="hidden" name="price" value="'.$price.'">
+               <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+            </form>
          </div>';
             $i += 1;
          }

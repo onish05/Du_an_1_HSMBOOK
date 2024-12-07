@@ -21,7 +21,7 @@
             <li><a href="index.php?act=dskh">Tài khoản</a></li>
             <li><a href="index.php?act=dsbl">Bình luận</a></li>
             <li><a href="index.php?act=thongke">Thống kê</a></li>
-            <li><a href="http://localhost/DuAnMau/index.php">Trang public</a></li>
+            <li><a href="http://localhost:8080/Du_an_1_HSMBOOK/">Trang public</a></li>
          </ul>
       </div>
    </div>

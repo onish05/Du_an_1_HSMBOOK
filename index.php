@@ -55,43 +55,62 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             //Controller tài khoản
         case 'dangky':
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {
-                $email = $_POST['email'];
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                insert_taikhoan($email, $user, $pass);
-                $thongbao = "Đăng ký thành công. Vui lòng đăng nhập để thực hiện các chức năng!";
+                $email = trim($_POST['email']);
+                $user = trim($_POST['user']);
+                $pass = trim($_POST['pass']);
+
+                $errors = [];
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $errors[] = "Email không hợp lệ";
+                }
+
+
+                if (empty($errors)) {
+                    insert_taikhoan($email, $user, $pass);
+                    $thongbao = "Đăng ký thành công. Vui lòng đăng nhập để thực hiện các chức năng!";
+                }
             }
             include "view/taikhoan/dangky.php";
             break;
         case 'dangnhap':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                $check_user = check_user($user, $pass);
-                if (is_array($check_user)) {
-                    $_SESSION['user'] = $check_user;
-                    $thongbao = "Đăng nhập thành công";
-                    header("Location: index.php");
-                } else {
-                    $thongbao = "Tài khoản không tồn tại!";
+                $user = trim($_POST['user']);
+                $pass = trim($_POST['pass']);
+
+                $errors = [];
+                if (empty($user)) {
+                    $errors[] = "Tên tài khoản không được để trống!";
                 }
+                if (empty($pass)) {
+                    $errors[] = "Mật khẩu không được để trống";
+                }
+                if (empty($errors)) {
+                    $check_user = check_user($user, $pass);
+                    if (is_array($check_user)) {
+                        $_SESSION['user'] = $check_user;
+                        $thongbao = "Đăng nhập thành công";
+                        header("Location: index.php");
+                        exit;
+                    } else {
+                        $thongbao = "Tài khoản không tồn tại!";
+                    }}
             }
             include 'view/taikhoan/dangky.php';
             break;
         case 'edit_taikhoan':
-            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                $email = $_POST['email'];
-                $address = $_POST['address'];
-                $tel = $_POST['tel'];
-                $id = $_POST['id'];
-                update_taikhoan($id, $user, $pass, $email, $address, $tel);
-                $_SESSION['user'] = check_user($user, $pass);
-                header('Location: index.php?act=edit_taikhoan');
-            }
-            include 'view/taikhoan/edit_taikhoan.php';
-            break;
+         if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+            $user = $_POST['user'];
+            $pass = $_POST['pass'];
+            $email = $_POST['email'];
+            $address = $_POST['address'];
+            $tel = $_POST['tel'];
+            $id = $_POST['id'];
+            update_taikhoan($id, $user, $email, $pass, $address, $tel);
+            $_SESSION['user'] = check_user($user, $pass);
+            header('Location: index.php?act=edit_taikhoan');
+         }
+         include "view/taikhoan/edit_taikhoan.php";
+         break;
         case 'quenmk':
             if (isset($_POST['guiemail']) && ($_POST['guiemail'])) {
                 $email = $_POST['email'];

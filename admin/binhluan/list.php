@@ -19,14 +19,14 @@
                     extract($binhluan);
                     $xoabl = "index.php?act=xoabl&id=" .$id;
                     echo ' <tr>
-                    <td><input type="checkbox" name="check" id=""/><td>
+                    <td><input type="checkbox" name="check" id=""/></td>
                     <td>'.$id.'</td>
                     <td>'.$noidung.'</td>
                     <td>'.$iduser.'</td>
                     <td>'.$idpro.'</td>
                     <td>'.$ngaybinhluan.'</td>
                     <td>
-                        <a href="' . $xoabl . '"><input type="button" value"Xóa" /></a>
+                        <a href="' . $xoabl . '"><input type="button" value="Xóa" /></a>
                     </td>
                     </tr>';
                 }
