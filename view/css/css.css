@@ -49,7 +49,7 @@
   width: 74%;
 }
 .footer {
-  background-color: #026670;
+  background-color: #99a5a2;
   font-size: 0.8vw;
   color: white;
   font-weight: bold;
@@ -57,7 +57,7 @@
   padding: 10px;
 }
 .boxtitle {
-  background-color: #fce181;
+  background-color: #797979;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border: 1px solid #edeae5;
@@ -80,7 +80,7 @@
   min-height: 200px;
 }
 .boxfooter {
-  background-color: #fce181;
+  background-color: #797979;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-left: 1px solid #edeae5;
@@ -159,7 +159,7 @@
 .formtaikhoan input[type="email"],
 .formtaikhoan input[type="tel"] {
   width: 100%;
-  border: 1px #fce181 solid;
+  border: 1px #797979 solid;
   padding: 5px 10px;
   border-radius: 5px;
 }
@@ -174,7 +174,7 @@
   border-radius: 5px;
   padding: 5px 8px;
   background-color: #fff;
-  border: 1px solid #fce181;
+  border: 1px solid #797979;
   font-size: medium;
 }
 .formtaikhoan li a {
@@ -201,13 +201,13 @@
 }
 .menudoc ul li:hover {
   color: white;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .searchbox input[type="submit"]:hover {
   width: 24%;
   float: right;
   padding: 7px 8px;
-  background-color: #fce181;
+  background-color: #797979;
   border-radius: 5px;
   border: 1px solid gray;
   color: gray;
@@ -227,7 +227,7 @@
   text-decoration: underline;
 }
 .headeradmin {
-  background-color: #026670;
+  background-color: #a4c1c4;
   color: white;
   padding: 0 35px;
   border-radius: 5px;
@@ -251,7 +251,7 @@
 }
 .formdslh table th {
   padding: 10px;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formdslh table td {
   padding: 15px 5px;
@@ -263,17 +263,17 @@
 }
 .formbs table th {
   padding: 10px;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formbs table th:nth-child(2) {
   padding: 10px;
   width: 25%;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formbs table th:nth-child(3) {
   padding: 10px;
   width: 25%;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formbs table td {
   padding: 15px 5px;
@@ -285,22 +285,22 @@
 }
 .formbsct table th {
   padding: 10px;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formbsct table th:nth-child(2) {
   padding: 10px;
   width: 15%;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formbsct table th:nth-child(3) {
   padding: 10px;
   width: 15%;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formbsct table th:nth-child(4) {
   padding: 10px;
   width: 15%;
-  background-color: #fce181;
+  background-color: #797979;
 }
 .formbsct table td {
   padding: 15px 5px;
@@ -442,7 +442,7 @@
   float: right;
   padding: 4px 5px;
   color: #fff;
-  background-color: #fce181;
+  background-color: #797979;
   border-radius: 5px;
   border: 3px solid #fff;
 }
