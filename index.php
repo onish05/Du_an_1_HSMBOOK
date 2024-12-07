@@ -8,7 +8,7 @@ include "model/taikhoan.php";
 include "model/thongke.php";
 include "view/header.php";
 include "global.php";
-
+if(isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 $sachnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
 
@@ -104,6 +104,17 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         //Controller cart
         case "addtocart":
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $img = $_POST['img'];
+                $price = $_POST['price'];
+                $soluong = 1;
+                $thanhtien = $soluong * $price;
+                $spadd = [$id, $name, $img, $price, $soluong, $thanhtien];
+                array_push($_SESSION['mycart'], $spadd);
+
+            }
             include "view/cart/viewcart.php";
             break;
         case "delcart":

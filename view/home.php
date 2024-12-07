@@ -32,7 +32,7 @@
             echo '<div class="boxsp ' . $mr . '">
                <div class="row img">
                <a href="' . $linksp . '">
-                  <img src="' . $hinh . '" width="300px" alt="" />
+                <img src="' . $hinh . '" height="450px" alt="" />
                </a>
             </div>
             <p>' . $price . '.000đ</p>

@@ -2,7 +2,7 @@
    <div class="boxtitle">TÀI KHOẢN</div>
    <div class="boxcontent formtaikhoan">
       <?php
-      if (isset($_SESSION['name'])) {
+      if (isset($_SESSION['user'])) {
          extract($_SESSION['user']);
          ?>
          <div class="row mb10">
@@ -14,7 +14,7 @@
             <?php
             if ($role == 1) {
                ?>
-               <li><a href="admin/index.php">Đắng nhập Admin</a></li>
+               <li><a href="admin/index.php">Đăng nhập admin</a></li>
             <?php } ?>
             <li><a href="index.php?act=thoat">Thoát</a></li>
          </div>
@@ -23,18 +23,18 @@
          ?>
          <form action="index.php?act=dangnhap" method="post">
             <div class="row mb10">
-               Tên đăng nhập <br>
-               <input type="text" name="user" id="">
+               Tên đăng nhập <br />
+               <input type="text" name="user" />
             </div>
             <div class="row mb10">
-               Mật khẩu <br>
-               <input type="password" name="pass" id="">
+               Mật khẩu <br />
+               <input type="password" name="pass" />
             </div>
             <div class="row mb10">
-               <input type="checkbox" name="" id="">Ghi nhớ tài khoản?
+               <input type="checkbox" name="" />Ghi nhớ tài khoản?
             </div>
             <div class="row mb10">
-               <input type="submit" value="Đăng nhập" name="dangnhap">
+               <input type="submit" value="Đăng nhập" name="dangnhap" />
             </div>
          </form>
          <li><a href="#">Quên mật khẩu</a></li>
@@ -44,6 +44,7 @@
    <?php
       }
       ?>
+
 <div class="row mb">
    <div class="boxtitle">DANH MỤC</div>
    <div class="boxcontent2">

@@ -5,7 +5,6 @@
          <div class="row boxcontent formdslh cart">
             <table>
                <tr>
-                  <th>STT</th>
                   <th>Hình</th>
                   <th>Sản phẩm</th>
                   <th>Đơn giá</th>
@@ -13,7 +12,30 @@
                   <th>Thành tiền</th>
                   <th>Thao tác</th>
                </tr>
-               <tr>
+               <?php
+               $tong = 0;
+               foreach ($_SESSION['mycart'] as $cart) {
+                  $hinh = $img_path . $cart['img'];
+                  $thanhtien = $cart['soluong'] * $cart['price'];
+                  $tong += $thanhtien;
+                  echo '
+                  <tr>
+                  <td><img src="' . $hinh . '" alt="" height="80px"></td>
+                  <td>' . $cart['name'] . '</td>
+                  <td>' . $cart['price'] . ' .000 VNĐ</td>
+                  <td>' . $cart['soluong'] . '</td>
+                  <td>' . $thanhtien . ' .000 VNĐ</td>
+                  <td><input type="button" value="Xóa"></td>
+               </tr>
+                  ';
+               }
+               echo '<tr>
+                  <td colspan="4">Tổng đơn hàng</td>
+                  <td>' . $tong . ' .000 VNĐ</td>
+                  <td></td>
+               </tr>';
+               ?>
+               <!-- <tr>
                   <td>1</td>
                   <td><img src="" alt="" height="80px"></td>
                   <td>Sách hay</td>
@@ -21,7 +43,7 @@
                   <td>2</td>
                   <td>100 VNĐ</td>
                   <td><input type="button" value="Xóa"></td>
-               </tr>
+               </tr> -->
             </table>
          </div>
       </div>

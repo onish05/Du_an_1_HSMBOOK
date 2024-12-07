@@ -33,7 +33,7 @@ if (is_file($hinhpath)) {
                </select>
             </div>
          </div>
-         <div class="row mb10"> 
+         <div class="row mb10">
             Tên sản phẩm <br />
             <input type="text" name="tensp" value="<?= $sanpham['name'] ?>" />
          </div>
@@ -73,7 +73,7 @@ if (is_file($hinhpath)) {
             echo $thongbao;
          }
          ?>
-          </form>
+      </form>
    </div>
 </div>
 </div>
