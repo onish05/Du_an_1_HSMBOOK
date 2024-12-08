@@ -1,9 +1,9 @@
 <div class="row mb">
     <div class="boxtrai mr">
-    <div class="row mb">
+        <div class="row mb">
             <div class="boxtitle">Giỏ hàng</div>
             <div class="row boxcontent cart">
-                <table>
+                <table class="table table-hover">
                     <tr>
                         <th>Hình</th>
                         <th>Sách</th>
@@ -15,13 +15,12 @@
 
                     <?php
                     $tong = 0;
-                    $i=0;
+                    $i = 0;
                     foreach ($_SESSION['mycart'] as $cart) {
                         $hinh = $img_path . $cart[2];
                         $ttien = $cart[3] * $cart[4];
                         $tong += $ttien;
-
-                        $xoasp = '<a href="index.php?act=delcart&idcart'.$i.'"> <input type="button" value="Xóa"></a>';
+                        $xoasp = '<a href="index.php?act=delcart&idcart' . $i . '"> <input type="button" value="Xóa"></a>';
                         echo '<tr>
                                     <td><img src="' . $hinh . '" height="80px"></td>
                                     <td>' . $cart[1] . '</td>
@@ -30,7 +29,7 @@
                                     <td>' . $ttien . '</td>
                                     <td>' . $xoasp . '</td>
                             </tr>';
-                            $i+=1; 
+                        $i += 1;
                     }
                     echo '<tr>
                                 <td colspan="4">Tổng đơn hàng</td>
@@ -44,7 +43,8 @@
             </div>
         </div>
         <div class="row mb bill">
-            <input type="submit" value="Đồng ý đặt hàng"> <a href="index.php?act=delcart"><input type="button" value="Xóa giỏ hàng"></a>
+            <input type="submit" value="Đồng ý đặt hàng"> <a href="index.php?act=delcart"><input type="button"
+                    value="Xóa giỏ hàng"></a>
         </div>
     </div>
     <div class="boxphai">

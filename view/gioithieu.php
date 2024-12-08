@@ -1,5 +1,5 @@
 <div class="row ">
-    <div class="boxtitle">Giởi thiệu</div>
+    <div class="boxtitle">GIỚI THIỆU</div>
     <div class="row boxcontent">
         <b>❤️
             Trang web bán sách này là một dự án được thực hiện bởi sinh viên nhằm ứng dụng các kiến thức về lập trình web, cơ sở dữ liệu và thiết kế giao diện người dùng vào thực tế. Dự án hướng đến việc tạo ra một nền tảng bán sách trực tuyến chuyên nghiệp, đáp ứng nhu cầu mua sắm tiện lợi của người dùng.
@@ -26,5 +26,6 @@
             Với người dùng: Mang lại trải nghiệm mua sắm sách tiện lợi, giúp kết nối sách đến với nhiều người yêu thích đọc sách. <br>
             Dự án này không chỉ là một bài tập lớn trong quá trình học tập mà còn có tiềm năng mở rộng để trở thành một sản phẩm thực tế nếu được đầu tư và phát triển thêm.
         </b>
+
     </div>
 </div>

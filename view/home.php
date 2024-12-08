@@ -7,15 +7,16 @@
 
                <!-- Full-width images with number and caption text -->
                <div class="mySlides fade">
-                  <img src="../view/img/slide/1.webp" style="width:100%">
+                  <img src="view/img/slide/1.jpg" style="width:100%">
+
                </div>
 
                <div class="mySlides fade">
-                  <img src="../view/img/slide/2.webp" style="width:100%">
+                  <img src="view/img/slide/2.jpg" style="width:100%">
                </div>
 
                <div class="mySlides fade">
-                  <img src="../view/img/slide/3.webp" style="width:100%">
+                  <img src="view/img/slide/3.jpg" style="width:100%">
                </div>
 
                <!-- Next and previous buttons -->
@@ -47,18 +48,20 @@
             echo '<div class="boxsp ' . $mr . '">
                <div class="row img">
                <a href="' . $linksp . '">
-                  <img src="' . $hinh . '" width="300px"  alt="" />
+                <img src="' . $hinh . '"height="300px" alt="" />
                </a>
             </div>
             <p>' . $price . '.000đ</p>
             <a href="' . $linksp . '"><div class="ten">' . $name . '</div></a>
-            <form action="index.php?act=addtocart" method="post">
-               <input type="hidden" name="id" value="'.$id.'">
-               <input type="hidden" name="name" value="'.$name.'">
-               <input type="hidden" name="img" value="'.$img.'">
-               <input type="hidden" name="price" value="'.$price.'">
-               <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
-            </form>
+            <div class="row btnaddtocart">
+               <form action="index.php?act=addtocart" method="post">
+                  <input type="hidden" name="id" value="' . $id . '">
+                  <input type="hidden" name="name" value="' . $name . '">
+                  <input type="hidden" name="img" value="' . $img . '">
+                  <input type="hidden" name="price" value="' . $price . '">
+                  <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+               </form>
+            </div>
          </div>';
             $i += 1;
          }

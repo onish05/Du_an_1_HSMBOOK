@@ -28,7 +28,6 @@
   background-color: #18191a;
   font-size: 1vw;
   color: white;
-  color: white;
   border-radius: 5px;
 }
 .header h1 {
@@ -99,14 +98,14 @@
 }
 .boxsp {
   float: left;
-  width: 32%;
+  width: 31%;
   min-height: 300px;
   border: 1px #ccc solid;
   border-radius: 5px;
   margin: 5px;
 }
 .boxsp .img {
-  min-height: 350px;
+  min-height: 220px;
   text-align: center;
 }
 .boxsp p {
@@ -125,12 +124,17 @@
 .boxsp a {
   margin-bottom: 5px;
 }
+.btnaddtocart {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
 .ten {
   margin-bottom: 5px;
   padding: 1px 5px;
 }
 .img img {
-  width: 350px;
+  width: 100%;
   border-radius: 5px;
 }
 .menu ul {
@@ -168,9 +172,10 @@
 }
 .formtaikhoan input[type="submit"],
 .formcontent input[type="submit"],
-.formcontent input[type="resest"],
+.formcontent input[type="reset"],
 .formtaikhoan input[type="reset"],
-.formcontent input[type="button"] {
+.formcontent input[type="button"],
+.addtocart input[type="submit"] {
   border-radius: 5px;
   padding: 5px 8px;
   background-color: #fff;
@@ -203,14 +208,29 @@
   color: white;
   background-color: #797979;
 }
+.searchbox input[type="text"] {
+  width: 75%;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #edeae5;
+}
+.searchbox input[type="submit"] {
+  width: 24%;
+  float: right;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #edeae5;
+}
 .searchbox input[type="submit"]:hover {
   width: 24%;
   float: right;
-  padding: 7px 8px;
+  padding: 5px 8px;
   background-color: #797979;
   border-radius: 5px;
   border: 1px solid gray;
-  color: gray;
+  color: white;
 }
 .top10 img {
   width: 10%;
@@ -247,6 +267,7 @@
 .formdslh table {
   width: 100%;
   text-align: center;
+  border-radius: 15px;
   border-collapse: collapse;
 }
 .formdslh table th {
@@ -333,7 +354,6 @@
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  /* user-select: none; */
 }
 /* Position the "next button" to the right */
 .next {
@@ -367,7 +387,6 @@
   position: absolute;
   top: 0;
 }
-
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -488,4 +507,7 @@
 .listdm a {
   text-decoration: none;
   color: #000;
+}
+.cart {
+  width: 100%;
 }

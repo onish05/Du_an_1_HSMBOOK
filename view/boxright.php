@@ -41,6 +41,7 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
 }
 ?>
 
+
 <div class="row mb">
    <div class="boxtitle">DANH MỤC</div>
    <div class="boxcontent2">
@@ -48,19 +49,36 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
          <?php
          foreach ($dsdm as $dm) {
             extract($dm);
-            $linkdm = "index.php?act=sanpham&iddm=" . $id;
-            echo '<ul><a href="' . $linkdm . '"><li>' . $name . '</li></a></ul>';
+            $linkdm = "index.php?act=sanpham&iddm" . $id;
+            echo '<ul><a href="' . $linkdm . '" <li> ' . $name . '</li></a></ul>';
+         }
+         ?>
+      </div>
+      <div class="boxfooter searchbox">
+         <form action="index.php?act=sanpham" method="post">
+            <input type="text" name="kyw" id="">
+            <input type="submit" value="Tìm" name="timkiem">
+         </form>
+      </div>
+   </div>
+   <div class="row">
+      <div class="boxtitle">Top 10 sách yêu thích</div>
+      <div class="row boxcontent">
+         <?php
+         foreach ($dstop10 as $top10) {
+            extract($sp);
+            $linksp = "index.php?act=sanphamct&idsp=" . $id;
+            $img = $img_path . $img;
+            echo '<div class="row mb10 top 10">
+                        <a href="' . $linksp . '"><img src="' . $img . '" width="300" alt="" /></a>
+                        <a href="' . $linksp . '">' . $name . '</a>
+                     </div>';
          }
          ?>
       </div>
    </div>
-   <div class="boxfooter searchbox">
-      <form action="index.php?act=sanpham" method="post">
-         <input type="text" name="kyw" />
-         <input type="submit" name="timkiem" value="Tìm" />
-      </form>
-   </div>
 </div>
+
 <div class="row">
 
    <div class="boxtitle">Top 10 sách yêu thích</div>
@@ -71,7 +89,7 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
          $linksp = "index.php?act=sanphamct&idsp=" . $id;
          $img = $img_path . $img;
          echo '<div class="row mb10 top10">
-                        <a href="' . $linksp . '"><img src="' . $img . '" width="300px" alt="" /></a>
+                        <a href="' . $linksp . '"><img src="' . $img . '" width="200px" alt="" /></a>
                         <a href="' . $linksp . '">' . $name . '</a>
                      </div>';
                   }
@@ -80,5 +98,35 @@ if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
             </div>
          </div>
       
+   </div>
+</div>
+<div class="row mb">
+   <div class="boxtitle">DANH MỤC</div>
+   <div class="boxcontent2">
+      <div class="menudoc listdm">
+         <?php ?>
+      </div>
+   </div>
+   <div class="boxfooter searchbox">
+      <form action="index.php?act=sanpham" method="post">
+         <input type="text" name="kyw" />
+         <input type="submit" name="timkiem" value="Tìm" />
+      </form>
+   </div>
+</div>
+<div class="row">
+   <div class="boxtitle">TOP SÁCH YÊU THÍCH</div>
+   <div class="row boxcontent">
+      <?php
+      foreach ($dstop10 as $sp) {
+         extract($sp);
+         $linksp = "index.php?act=sanphamct&idsp=" . $id;
+         $img = $img_path . $img;
+         echo '<div class="row mb10 top10">
+               <a href="' . $linksp . '"><img src="' . $img . '" width="300" alt="" /></a>
+               <a href="' . $linksp . '">' . $name . '</a>
+            </div>';
+      }
+      ?>
    </div>
 </div>
