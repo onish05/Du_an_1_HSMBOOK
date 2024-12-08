@@ -9,7 +9,8 @@ include "model/thongke.php";
 include "view/header.php";
 include "global.php";
 
-if(!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
+if (!isset($_SESSION['mycart']))
+    $_SESSION['mycart'] = [];
 
 $sachnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
@@ -54,7 +55,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             break;
 
-            //Controller tài khoản
+        //Controller tài khoản
 
         case 'dangky':
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {
@@ -96,24 +97,25 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                         exit;
                     } else {
                         $thongbao = "Tài khoản không tồn tại!";
-                    }}
+                    }
+                }
             }
             include 'view/taikhoan/dangky.php';
             break;
         case 'edit_taikhoan':
-         if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-            $user = $_POST['user'];
-            $pass = $_POST['pass'];
-            $email = $_POST['email'];
-            $address = $_POST['address'];
-            $tel = $_POST['tel'];
-            $id = $_POST['id'];
-            update_taikhoan($id, $user, $email, $pass, $address, $tel);
-            $_SESSION['user'] = check_user($user, $pass);
-            header('Location: index.php?act=edit_taikhoan');
-         }
-         include "view/taikhoan/edit_taikhoan.php";
-         break;
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                $id = $_POST['id'];
+                update_taikhoan($id, $user, $email, $pass, $address, $tel);
+                $_SESSION['user'] = check_user($user, $pass);
+                header('Location: index.php?act=edit_taikhoan');
+            }
+            include "view/taikhoan/edit_taikhoan.php";
+            break;
         case 'quenmk':
             if (isset($_POST['guiemail']) && ($_POST['guiemail'])) {
                 $email = $_POST['email'];
@@ -130,30 +132,30 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php');
             break;
-            case 'addtocart':
+        case 'addtocart':
             //thêm thông tin từ form addtocart đến session
-            if(isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $img = $_POST['img'];
                 $price = $_POST['price'];
                 $soluong = 1;
                 $ttien = $soluong * $price;
-                $spadd = [$id,$name, $img, $price, $soluong, $ttien];
+                $spadd = [$id, $name, $img, $price, $soluong, $ttien];
                 array_push($_SESSION['mycart'], $spadd);
             }
             include "view/cart/viewcart.php";
             break;
         case 'delcart':
-            if(isset($_GET['idcart'])){
-                array_slice($_SESSION['mycart'],$_GET['idcart'],1);
-            }else{
-                $_SESSION['mycart']=[];
+            if (isset($_GET['idcart'])) {
+                array_slice($_SESSION['mycart'], $_GET['idcart'], 1);
+            } else {
+                $_SESSION['mycart'] = [];
             }
             header('Location: index.php?act=viewcart');
             exit;
             break;
-            //controller   
+        //controller   
 
         case 'gioithieu':
             include "view/gioithieu.php";
