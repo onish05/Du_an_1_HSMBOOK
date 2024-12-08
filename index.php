@@ -9,6 +9,7 @@ include "model/thongke.php";
 include "view/header.php";
 include "global.php";
 
+if(!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $sachnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
 $dstop10 = loadall_sanpham_top10();
@@ -37,7 +38,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $id = $_GET['idsp'];
 
                 // Tăng lượt xem
-                $tang_luotxem($id);
+                tang_luotxem($id);
 
                 // Lấy thông tin sản phẩm
                 $onesp = loadone_sanpham($id);
@@ -126,6 +127,29 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'thoat':
             session_unset();
             header('Location: index.php');
+            break;
+        case 'addtocart':
+            //thêm thông tin từ form addtocart đến session
+            if(isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $img = $_POST['img'];
+                $price = $_POST['price'];
+                $soluong = 1;
+                $ttien = $soluong * $price;
+                $spadd = [$id,$name, $img, $price, $soluong, $ttien];
+                array_push($_SESSION['mycart'], $spadd);
+            }
+            include "view/cart/viewcart.php";
+            break;
+        case 'delcart':
+            if(isset($_GET['idcart'])){
+                array_slice($_SESSION['mycart'],$_GET['idcart'],1);
+            }else{
+                $_SESSION['mycart']=[];
+            }
+            header('Location: index.php?act=viewcart');
+            exit;
             break;
             //controller   
         case 'gioithieu':

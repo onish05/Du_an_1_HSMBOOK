@@ -24,7 +24,7 @@
                 <?php
                 foreach ($sp_cungloai as $sp_cungloaii) {
                     extract($sp_cungloaii);
-                    $linksp = "index.php?act=sanpphamct&idsp" . $id;
+                    $linksp = "index.php?act=sanphamct&idsp" . $id;
                     echo '<li class="row mb10 spcl"><a href="' . $linksp . '">' . $name . '</a></li>';
                 }
                 ?>

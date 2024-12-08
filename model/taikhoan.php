@@ -32,3 +32,7 @@ function update_taikhoan($id, $user, $email, $pass, $address, $tel)
     $sql = "UPDATE taikhoan SET user = '" . $user . "', email = '" . $email . "' , pass = '" . $pass . "', address = '" . $address  . "', tel = '" . $tel . "' WHERE id = " . $id;
     pdo_execute($sql);
 }
+function tang_luotxem($id) {
+    $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE id = ?";
+    pdo_execute($sql, $id);
+}
