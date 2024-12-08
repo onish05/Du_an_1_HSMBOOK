@@ -132,20 +132,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php');
             break;
-        case 'addtocart':
-            //thêm thông tin từ form addtocart đến session
-            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
-                $id = $_POST['id'];
-                $name = $_POST['name'];
-                $img = $_POST['img'];
-                $price = $_POST['price'];
-                $soluong = 1;
-                $ttien = $soluong * $price;
-                $spadd = [$id, $name, $img, $price, $soluong, $ttien];
-                array_push($_SESSION['mycart'], $spadd);
-            }
-            include "view/cart/viewcart.php";
-            break;
         case 'delcart':
             if (isset($_GET['idcart'])) {
                 array_slice($_SESSION['mycart'], $_GET['idcart'], 1);
@@ -154,9 +140,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             header('Location: index.php?act=viewcart');
             exit;
-            break;
         //controller   
-
         case 'gioithieu':
             include "view/gioithieu.php";
             break;
@@ -171,12 +155,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $thanhtien = $soluong * $price;
                 $spadd = [$id, $name, $img, $price, $soluong, $thanhtien];
                 array_push($_SESSION['mycart'], $spadd);
-
             }
             include "view/cart/viewcart.php";
-            break;
-        case "delcart":
-            header("Location: index.php?act=viewcart");
             break;
         case "viewcart":
             include "view/cart/viewcart.php";
