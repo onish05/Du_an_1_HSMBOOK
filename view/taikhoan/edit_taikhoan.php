@@ -2,7 +2,7 @@
 <div class="row mb">
     <div class="boxtrai mr">
         <div class="row mb">
-            <div class="boxtitle">Cập nhật tài khoản</div>
+            <div class="boxtitle">CẬP NHẬT TÀI KHOẢN</div>
             <div class="row boxcontent formtaikhoan">
                 <?php
                 if(isset($_SESSION['user']) && (is_array($_SESSION['user']))) {

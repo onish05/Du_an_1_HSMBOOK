@@ -19,18 +19,17 @@
                <input type="submit" name="dangky" value="Đăng ký">
                <input type="reset" value="Nhập lại">
             </div>
-            </form>
+         </form>
          <h2 class="thongbao">
-            <?php 
-            if(isset($thongbao) && ($thongbao != "")) {
+            <?php
+            if (isset($thongbao) && ($thongbao != "")) {
                echo $thongbao;
             }
             ?>
          </h2>
       </div>
    </div>
-</div>
-<div class="boxphai">
-   <?php include "view/boxright.php";?>
-</div>
+   <div class="boxphai">
+      <?php include "view/boxright.php"; ?>
+   </div>
 </div>
