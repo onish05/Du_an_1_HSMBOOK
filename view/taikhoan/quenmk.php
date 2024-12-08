@@ -1,7 +1,7 @@
 <div class="row mb">
     <div class="boxtrai mr">
         <div class="row mb">
-            <div class="boxtitle">Quên mật khẩu</div>
+            <div class="boxtitle">QUÊN MẬT KHẨU</div>
             <div class="row boxcontent formtaikhoan">
                 <form action="index.php?act=quenmk" method="post">
                     <div class="row mb10">

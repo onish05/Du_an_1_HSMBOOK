@@ -1,7 +1,7 @@
 <div class="row mb">
     <div class="boxtrai mr">
         <div class="row mb">
-            <div class="boxtitle">Sản phẩm <strong><? $tendm ?></strong></div>
+            <div class="boxtitle">SẢN PHẨM <strong><? $tendm ?></strong></div>
             <div class="row boxcontent">
                 <?php
                 $i = 0;

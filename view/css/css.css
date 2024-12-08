@@ -60,7 +60,8 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border: 1px solid #edeae5;
-  color: #000000;
+  color: white;
+  font-weight: bold;
   padding: 10px;
 }
 .boxcontent {
@@ -508,6 +509,46 @@
   text-decoration: none;
   color: #000;
 }
-.cart {
+.cart table {
   width: 100%;
+  text-align: center;
+}
+.billform input[type="text"],
+.billform input[type="email"],
+.billform input[type="tel"] {
+  width: 890px;
+  padding: 8px 8px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #797979;
+}
+
+.ptttall {
+  border-left: 1px solid #edeae5;
+  border-right: 1px solid #edeae5;
+  border-bottom: 1px solid #edeae5;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 100px;
+  padding: 10px;
+}
+.ptttall tr td {
+  font-size: medium;
+}
+.ptttall input[type="radio"]:checked + label {
+  color: white;
+  background-color: #489caa; /* Màu nền khi được chọn */
+  padding: 5px;
+  border-radius: 5px;
+}
+table {
+  width: 100%;
+  text-align: center;
+  border-radius: 15px;
+  border-collapse: collapse;
+}
+.tablebill th {
+  padding: 10px;
+  background-color: #797979;
 }
