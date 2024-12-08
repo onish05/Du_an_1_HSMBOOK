@@ -66,7 +66,7 @@
    </div>
 </div>
 <div class="row">
-   <div class="boxtitle">TOP SÁCH YÊU THÍCH</div>
+   <div class="boxtitle">SÁCH YÊU THÍCH</div>
    <div class="row boxcontent">
       <?php
       foreach ($dstop10 as $sp) {
