@@ -65,7 +65,7 @@
       </form>
    </div>
 </div>
-<div class="row">
+<div class="row mb">
    <div class="boxtitle">SÁCH YÊU THÍCH</div>
    <div class="row boxcontent">
       <?php
@@ -81,3 +81,4 @@
       ?>
    </div>
 </div>
+   </div>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 08, 2024 at 08:51 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th12 08, 2024 lúc 12:25 PM
+-- Phiên bản máy phục vụ: 8.0.30
+-- Phiên bản PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,53 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_bansach`
+-- Cơ sở dữ liệu: `db_bansach`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `binhluan`
+-- Cấu trúc bảng cho bảng `bill`
+--
+
+CREATE TABLE `bill` (
+  `id` int NOT NULL,
+  `iduser` int DEFAULT '0',
+  `bill_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `bill_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `bill_tel` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `bill_email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `bill_pttt` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1. Thanh toán trực tiếp 2. Chuyển khoản 3. Thanh toán online',
+  `ngaydathang` varchar(50) DEFAULT NULL,
+  `total` int NOT NULL DEFAULT '0',
+  `bill_status` tinyint(1) DEFAULT '0' COMMENT '0. Đơn hàng mới\r\n1. Đang chờ xử lý\r\n2. Đang giao hàng \r\n3. Đã giao hàng',
+  `receive_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `receive_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `receive_tel` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `bill`
+--
+
+INSERT INTO `bill` (`id`, `iduser`, `bill_name`, `bill_address`, `bill_tel`, `bill_email`, `bill_pttt`, `ngaydathang`, `total`, `bill_status`, `receive_name`, `receive_address`, `receive_tel`) VALUES
+(1, 0, 'admin', 'Hưng Nhân', '03932051101231', '', 1, '2024-12-08 11:13:18', 940, 0, NULL, NULL, NULL),
+(2, 0, 'admin', 'Hưng Nhân', '03932051101231', 'vanhuynguyen2005@gmail.com', 1, '2024-12-08 11:14:22', 940, 0, NULL, NULL, NULL),
+(3, 0, 'admin', 'Hưng Nhân', '03932051101231', 'vanhuynguyen2005@gmail.com', 2, '2024-12-08 11:16:03', 940, 0, NULL, NULL, NULL),
+(4, 0, 'admin', 'Hưng Nhân', '03932051101231', 'vanhuynguyen2005@gmail.com', 2, '2024-12-08 11:18:27', 940, 0, NULL, NULL, NULL),
+(5, 0, 'admin', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 11:23:32', 580, 0, NULL, NULL, NULL),
+(6, 0, 'admin', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 11:29:51', 580, 0, NULL, NULL, NULL),
+(7, 0, 'admin', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 11:29:54', 580, 0, NULL, NULL, NULL),
+(8, 0, 'admin', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 11:30:45', 580, 0, NULL, NULL, NULL),
+(9, 0, 'admin', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 11:31:53', 580, 0, NULL, NULL, NULL),
+(10, 0, 'admin', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 11:32:46', 580, 0, NULL, NULL, NULL),
+(11, 0, 'admin', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 11:33:50', 400, 0, NULL, NULL, NULL),
+(12, 6, 'Nguyễn Văn Huy', 'Huyện Hưng Hà', '0393205110', 'vanhuynguyen2802@gmail.com', 1, '2024-12-08 12:08:22', 400, 0, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `binhluan`
 --
 
 CREATE TABLE `binhluan` (
@@ -35,24 +75,52 @@ CREATE TABLE `binhluan` (
   `ngaybinhluan` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `binhluan`
+--
+
+INSERT INTO `binhluan` (`id`, `idpro`, `iduser`, `noidung`, `ngaybinhluan`) VALUES
+(2, 1, 6, 'hayy', '2024-12-08 12:04:36');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietdonhang`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
-CREATE TABLE `chitietdonhang` (
+CREATE TABLE `cart` (
   `id` int NOT NULL,
-  `id_donhang` int NOT NULL,
-  `id_sach` int NOT NULL,
-  `so_luong` int NOT NULL DEFAULT '1',
-  `gia_ban` int NOT NULL
+  `iduser` int NOT NULL,
+  `idpro` int NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `price` int NOT NULL DEFAULT '0',
+  `soluong` int NOT NULL,
+  `thanhtien` int NOT NULL,
+  `idbill` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`id`, `iduser`, `idpro`, `img`, `name`, `price`, `soluong`, `thanhtien`, `idbill`) VALUES
+(2, 6, 26, 'luoc_su_thoi_gian.jpg', 'Lược sử thời gian', 250, 1, 250, 5),
+(7, 6, 26, 'luoc_su_thoi_gian.jpg', 'Lược sử thời gian', 250, 1, 250, 9),
+(8, 6, 19, 'nghe_thuat_song_tu_tin.jpg', 'Nghệ thuật sống tự tin', 180, 1, 180, 9),
+(9, 6, 23, 'pinocchio.jpg', 'Cuộc phiêu lưu của Pinocchio', 150, 1, 150, 9),
+(10, 6, 26, 'luoc_su_thoi_gian.jpg', 'Lược sử thời gian', 250, 1, 250, 10),
+(11, 6, 19, 'nghe_thuat_song_tu_tin.jpg', 'Nghệ thuật sống tự tin', 180, 1, 180, 10),
+(12, 6, 23, 'pinocchio.jpg', 'Cuộc phiêu lưu của Pinocchio', 150, 1, 150, 10),
+(13, 6, 23, 'pinocchio.jpg', 'Cuộc phiêu lưu của Pinocchio', 150, 1, 150, 11),
+(14, 6, 26, 'luoc_su_thoi_gian.jpg', 'Lược sử thời gian', 250, 1, 250, 11),
+(15, 6, 23, 'pinocchio.jpg', 'Cuộc phiêu lưu của Pinocchio', 150, 1, 150, 12),
+(16, 6, 26, 'luoc_su_thoi_gian.jpg', 'Lược sử thời gian', 250, 1, 250, 12);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `danhmuc`
+-- Cấu trúc bảng cho bảng `danhmuc`
 --
 
 CREATE TABLE `danhmuc` (
@@ -61,7 +129,7 @@ CREATE TABLE `danhmuc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `danhmuc`
+-- Đang đổ dữ liệu cho bảng `danhmuc`
 --
 
 INSERT INTO `danhmuc` (`id`, `name`) VALUES
@@ -74,34 +142,7 @@ INSERT INTO `danhmuc` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donhang`
---
-
-CREATE TABLE `donhang` (
-  `id` int NOT NULL,
-  `id_taikhoan` int NOT NULL,
-  `ngay_dat` datetime DEFAULT CURRENT_TIMESTAMP,
-  `tong_tien` int NOT NULL,
-  `trang_thai` enum('Chờ xác nhận','Đang giao','Đã giao','Hủy') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'Chờ xác nhận'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `giohang`
---
-
-CREATE TABLE `giohang` (
-  `id` int NOT NULL,
-  `id_taikhoan` int NOT NULL,
-  `id_sach` int NOT NULL,
-  `so_luong` int NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -116,11 +157,11 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `sanpham`
+-- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
 INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luotxem`, `iddm`) VALUES
-(1, 'Người tình Sputnik', 'Haruki Murakami', 150, 'nguoi_tinh_sputnik.jpg', 'Một câu chuyện tình kỳ lạ với phong cách viết huyền ảo, đầy cảm xúc.', 12312, 22),
+(1, 'Người tình Sputnik', 'Haruki Murakami', 150, 'nguoi_tinh_sputnik.jpg', 'Một câu chuyện tình kỳ lạ với phong cách viết huyền ảo, đầy cảm xúc.', 12313, 22),
 (2, 'Đồi gió hú', 'Emily Brontë', 200, 'doi_gio_hu.jpg', 'Tác phẩm kinh điển xoay quanh tình yêu và sự thù hận.', 323, 22),
 (3, '1984', 'George Orwell', 180, '1984.jpg', 'Một xã hội bị giám sát toàn diện trong bối cảnh tương lai.', 23, 22),
 (4, 'Cánh đồng bất tận', 'Nguyễn Ngọc Tư', 100, 'canh_dong_bat_tan.jpg', 'Cuộc sống miền Tây Nam Bộ với nhiều góc nhìn nhân văn.', 55, 22),
@@ -144,13 +185,13 @@ INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luotxem`
 (22, 'Harry Potter và hòn đá phù thủy', 'J.K. Rowling', 350, 'harry_potter.jpg', 'Hành trình trở thành pháp sư của cậu bé Harry Potter.', 0, 31),
 (23, 'Cuộc phiêu lưu của Pinocchio', 'Carlo Collodi', 150, 'pinocchio.jpg', 'Hành trình tìm lại bản thân của chú bé gỗ Pinocchio.', 0, 31),
 (24, 'Nhóc Nicolas', 'René Goscinny', 120, 'nhoc_nicolas.jpg', 'Những câu chuyện vui nhộn của cậu bé Nicolas.', 0, 31),
-(25, 'Alice ở xứ sở thần tiên', 'Lewis Carroll', 250, 'alice_xu_so_than_tien.jpg', 'Câu chuyện kỳ ảo về cuộc phiêu lưu của cô bé Alice.', 216, 31),
+(25, 'Alice ở xứ sở thần tiên', 'Lewis Carroll', 250, 'alice_xu_so_than_tien.jpg', 'Câu chuyện kỳ ảo về cuộc phiêu lưu của cô bé Alice.', 217, 31),
 (26, 'Lược sử thời gian', 'Stephen Hawking', 250, 'luoc_su_thoi_gian.jpg', 'Tìm hiểu vũ trụ từ vụ nổ lớn đến hố đen.', 13, 33);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taikhoan`
+-- Cấu trúc bảng cho bảng `taikhoan`
 --
 
 CREATE TABLE `taikhoan` (
@@ -164,20 +205,26 @@ CREATE TABLE `taikhoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `taikhoan`
+-- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
 INSERT INTO `taikhoan` (`id`, `user`, `pass`, `email`, `address`, `tel`, `role`) VALUES
-(2, 'admin', '123', '', NULL, NULL, 0),
 (3, 'onish', '123456', '', NULL, NULL, 1),
-(4, 'minh', '123', 'beebooksn4@gmail.com', NULL, NULL, 0);
+(4, 'minh', '123', 'beebooksn4@gmail.com', NULL, NULL, 0),
+(6, 'admin', '123', 'vanhuynguyen2802@gmail.com', 'Huyện Hưng Hà', '0393205110', 1);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `binhluan`
+-- Chỉ mục cho bảng `bill`
+--
+ALTER TABLE `bill`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
   ADD PRIMARY KEY (`id`),
@@ -185,123 +232,90 @@ ALTER TABLE `binhluan`
   ADD KEY `id_taikhoan` (`iduser`);
 
 --
--- Indexes for table `chitietdonhang`
+-- Chỉ mục cho bảng `cart`
 --
-ALTER TABLE `chitietdonhang`
+ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_donhang` (`id_donhang`),
-  ADD KEY `id_sach` (`id_sach`);
+  ADD KEY `idpro` (`idpro`) USING BTREE,
+  ADD KEY `idbill` (`idbill`) USING BTREE,
+  ADD KEY `iduser` (`iduser`) USING BTREE;
 
 --
--- Indexes for table `danhmuc`
+-- Chỉ mục cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `donhang`
---
-ALTER TABLE `donhang`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_taikhoan` (`id_taikhoan`);
-
---
--- Indexes for table `giohang`
---
-ALTER TABLE `giohang`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_taikhoan` (`id_taikhoan`),
-  ADD KEY `id_sach` (`id_sach`);
-
---
--- Indexes for table `sanpham`
+-- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_theloai` (`iddm`);
 
 --
--- Indexes for table `taikhoan`
+-- Chỉ mục cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `binhluan`
+-- AUTO_INCREMENT cho bảng `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `chitietdonhang`
+-- AUTO_INCREMENT cho bảng `cart`
 --
-ALTER TABLE `chitietdonhang`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `cart`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `danhmuc`
+-- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `donhang`
---
-ALTER TABLE `donhang`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `giohang`
---
-ALTER TABLE `giohang`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `sanpham`
+-- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `taikhoan`
+-- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `binhluan`
+-- Các ràng buộc cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
   ADD CONSTRAINT `binhluan_ibfk_1` FOREIGN KEY (`idpro`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `binhluan_ibfk_2` FOREIGN KEY (`iduser`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `chitietdonhang`
+-- Các ràng buộc cho bảng `cart`
 --
-ALTER TABLE `chitietdonhang`
-  ADD CONSTRAINT `chitietdonhang_ibfk_1` FOREIGN KEY (`id_donhang`) REFERENCES `donhang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `chitietdonhang_ibfk_2` FOREIGN KEY (`id_sach`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `donhang`
---
-ALTER TABLE `donhang`
-  ADD CONSTRAINT `donhang_ibfk_1` FOREIGN KEY (`id_taikhoan`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `giohang`
---
-ALTER TABLE `giohang`
-  ADD CONSTRAINT `giohang_ibfk_1` FOREIGN KEY (`id_taikhoan`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `giohang_ibfk_2` FOREIGN KEY (`id_sach`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `taikhoan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`idpro`) REFERENCES `sanpham` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -171,9 +171,32 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "view/cart/bill.php";
             break;
         case "billconfirm":
+            // tạo bill
+            if (isset($_POST['dongydathang']) && ($_POST['dongydathang'])) {
+                $name = $_POST['name'];
+                if(isset($_SESSION['user'])) $iduser=$_SESSION['user']['id'];    
+                else $id = 0;
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                $pttt  = $_POST['pttt'];
+                $ngaydathang = date('Y-m-d H:i:s');
+                $tongdonhang=tongdonhang();
+
+                $idbill=insert_bill($iduser,$name,$email,$address, $tel,$pttt, $ngaydathang, $tongdonhang);
+
+                foreach ($_SESSION['mycart'] as $cart) {
+                    insert_cart($_SESSION['user']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
+            }
+            $_SESSION['cart']=[];
+        }
+
+        $bill=loadone_bill($idbill);
+        $billct=loadall_cart($idbill);
             include "view/cart/billconfirm.php";
             break;
         case "mybill":
+            $listbill=loadall_bill($_SESSION['user']['id']);
             include "view/cart/mybill.php";
             break;
         default:

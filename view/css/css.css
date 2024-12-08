@@ -511,7 +511,7 @@
 }
 .cart table {
   width: 100%;
-  text-align: center;
+text-align: center;
 }
 .billform input[type="text"],
 .billform input[type="email"],

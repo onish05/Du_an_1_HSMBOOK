@@ -39,12 +39,12 @@
          </div>
          <div class="row mb">
             <div class="boxtitle">PHƯƠNG THỨC THANH TOÁN</div>
-            <div class="row ptttall">
+            <div class="row boxcontent">
                <table>
                   <tr>
-                     <td><input type="radio" name="pttt" value="COD" checked> Trả tiền khi nhận hàng</td>
-                     <td><input type="radio" name="pttt" value="bank"> Chuyển khoản ngân hàng</td>
-                     <td><input type="radio" name="pttt" value="online"> Thanh toán online</td>
+                     <td><input type="radio" name="pttt" value="1" checked> Trả tiền khi nhận hàng</td>
+                     <td><input type="radio" name="pttt" value="2"> Chuyển khoản ngân hàng</td>
+                     <td><input type="radio" name="pttt" value="3"> Thanh toán online</td>
                   </tr>
                </table>
             </div>
@@ -60,7 +60,7 @@
             </div>
          </div>
          <div class="row mb bill">
-            <a href="index.php?act=billconfirm"><input type="submit" value="ĐẶT HÀNG"></a>
+            <a href="index.php?act=billconfirm"><input type="submit" value="ĐẶT HÀNG" name="dongydathang"></a>
          </div>
       </form>
    </div>
