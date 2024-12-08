@@ -117,6 +117,8 @@ CREATE TABLE `sanpham` (
 
 --
 -- Dumping data for table `sanpham`
+
+
 --
 
 INSERT INTO `sanpham` (`id`, `name`, `tacgia`, `price`, `img`, `mota`, `luotxem`, `iddm`) VALUES
