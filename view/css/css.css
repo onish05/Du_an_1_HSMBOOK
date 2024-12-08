@@ -232,7 +232,7 @@
   color: white;
 }
 .top10 img {
-  width: 15%;
+  width: 10%;
   height: 35px;
   float: left;
   margin-right: 10px;
@@ -387,6 +387,7 @@
   position: absolute;
   top: 0;
 }
+
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
