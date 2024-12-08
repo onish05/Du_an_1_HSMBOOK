@@ -4,7 +4,7 @@
       <div class="row boxcontent formtaikhoan">
          <form action="index.php?act=dangky" method="post">
             <div class="row mb10">
-               Tên đang nhập
+               Tên đăng nhập
                <input type="text" name="user">
             </div>
             <div class="row mb10">
