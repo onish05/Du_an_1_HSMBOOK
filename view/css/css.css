@@ -106,7 +106,7 @@
   margin: 5px;
 }
 .boxsp .img {
-  min-height: 220px;
+  min-height: 350px;
   text-align: center;
 }
 .boxsp p {
@@ -130,7 +130,7 @@
   padding: 1px 5px;
 }
 .img img {
-  width: 100%;
+  width: 350px;
   border-radius: 5px;
 }
 .menu ul {
