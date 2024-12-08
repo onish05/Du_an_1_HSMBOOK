@@ -8,6 +8,7 @@
                 <tr>
                     <th></th>
                     <th>Mã Tài khoản</th>
+
                     <th>Tên tài khoản</th>
                     <th>Mật khẩu</th>
                     <th>Email</th>
@@ -35,6 +36,7 @@
                         <a href="'.$xoatk.'"><input type="button" value="Xóa" /></a>
                     </td>
                     </tr>';
+
                 }
                 ?>
             </table>
@@ -44,6 +46,7 @@
             <input type="button" value="Bỏ chọn tất cả">
             <input type="button" value="Xóa các mục đã chọn">
             <a href="index.php?act=adddm"><input type="button" value="Nhập thêm"></a>
+
         </div>
     </div>
 </div>

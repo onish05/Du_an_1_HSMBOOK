@@ -10,6 +10,7 @@ include "view/header.php";
 include "global.php";
 
 if(!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
+
 $sachnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
 $dstop10 = loadall_sanpham_top10();
@@ -17,7 +18,7 @@ $dstop10 = loadall_sanpham_top10();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-            //Controller sản phẩm
+        //Controller sản phẩm
         case 'sanpham':
             if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
                 $kyw = $_POST['kyw'];
@@ -54,6 +55,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
             //Controller tài khoản
+
         case 'dangky':
             if (isset($_POST['dangky']) && ($_POST['dangky'])) {
                 $email = trim($_POST['email']);
@@ -128,7 +130,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php');
             break;
-        case 'addtocart':
+            case 'addtocart':
             //thêm thông tin từ form addtocart đến session
             if(isset($_POST['addtocart']) && ($_POST['addtocart'])) {
                 $id = $_POST['id'];
@@ -152,8 +154,39 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             exit;
             break;
             //controller   
+
         case 'gioithieu':
             include "view/gioithieu.php";
+            break;
+        //Controller cart
+        case "addtocart":
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $img = $_POST['img'];
+                $price = $_POST['price'];
+                $soluong = 1;
+                $thanhtien = $soluong * $price;
+                $spadd = [$id, $name, $img, $price, $soluong, $thanhtien];
+                array_push($_SESSION['mycart'], $spadd);
+
+            }
+            include "view/cart/viewcart.php";
+            break;
+        case "delcart":
+            header("Location: index.php?act=viewcart");
+            break;
+        case "viewcart":
+            include "view/cart/viewcart.php";
+            break;
+        case "bill":
+            include "view/cart/bill.php";
+            break;
+        case "billconfirm":
+            include "view/cart/billconfirm.php";
+            break;
+        case "mybill":
+            include "view/cart/mybill.php";
             break;
         default:
             include "view/home.php";

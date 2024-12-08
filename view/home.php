@@ -8,6 +8,7 @@
                <!-- Full-width images with number and caption text -->
                <div class="mySlides fade">
                   <img src="../view/img/slide/1.webp" style="width:100%">
+
                </div>
 
                <div class="mySlides fade">

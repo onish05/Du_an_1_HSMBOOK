@@ -1,5 +1,4 @@
 <div class="row mb">
-
     <div class="boxtrai mr">
         <div class="row mb">
             <?php
