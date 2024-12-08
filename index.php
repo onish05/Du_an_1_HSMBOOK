@@ -6,6 +6,7 @@ include "model/binhluan.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
 include "model/thongke.php";
+include "model/cart.php";
 include "view/header.php";
 include "global.php";
 
@@ -132,14 +133,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php');
             break;
-        case 'delcart':
-            if (isset($_GET['idcart'])) {
-                array_slice($_SESSION['mycart'], $_GET['idcart'], 1);
-            } else {
-                $_SESSION['mycart'] = [];
-            }
-            header('Location: index.php?act=viewcart');
-            exit;
+
         //controller   
         case 'gioithieu':
             include "view/gioithieu.php";
@@ -157,6 +151,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 array_push($_SESSION['mycart'], $spadd);
             }
             include "view/cart/viewcart.php";
+            break;
+        case 'delcart':
+            if (isset($_GET['idcart'])) {
+                $idcart = $_GET['idcart'];
+                // Xóa sản phẩm tại chỉ số idcart
+                unset($_SESSION['mycart'][$idcart]);
+                // Để tránh các chỉ số bị rỗng trong mảng, có thể reindex lại mảng
+                $_SESSION['mycart'] = array_values($_SESSION['mycart']);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header('Location: index.php?act=viewcart');
             break;
         case "viewcart":
             include "view/cart/viewcart.php";
